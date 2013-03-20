@@ -104,6 +104,7 @@
 </Group>
 <Group labelreference="L3" drawlabel="true">
 <Input>
+<<<<<<< HEAD
 <Text-field prompt="&gt; " style="Maple Input" layout="Normal">plot3d(2*x+2*y, x=0..2, y=0..2)</Text-field>
 </Input>
 <Output>
@@ -115,6 +116,8 @@
 </Group>
 <Group labelreference="L8" drawlabel="true">
 <Input>
+=======
+>>>>>>> master
 <Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
 </Input>
 </Group>
