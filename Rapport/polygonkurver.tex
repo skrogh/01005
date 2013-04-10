@@ -234,5 +234,12 @@ Afstanden mellem to på hinanden følgene hjørnepunkter er
 Den polygonkurve der følger den korteste vej mellem dens endepunkter opfylder at
 \begin{equation}
 \mathscr{L}(\pmb{\gamma}_p)=\sum\limits_{i=1}^{n-1}\delta_i=min\left(\sum\limits_{i=1}^{n-1}\delta_i\right)
+\label{polygeo}
 \end{equation}
-Polygonkurvens længde kan ændres ved at ændre på hjørnepunkternes placering, dvs. der kan konstrueres en polygonkurve mellem to punkter på en flade, der approksimerer geodæten mellem de to punkter, ved at flytte på polygonkurvens hjørnepunkter. Vi er dog nødt til
+Polygonkurvens længde kan ændres ved at ændre på hjørnepunkternes placering, dvs. der kan konstrueres en polygonkurve mellem to punkter på en flade, der approksimerer geodæten mellem de to punkter, ved at flytte på polygonkurvens hjørnepunkter. Det er dog nødvendigt at placere en restriktion på ligning (\ref{polygeo}) for at undgå at den ene halvdel af polygonkurvens hjørnepunkter placeres i \(p_a\) og den anden halvdel i \(p_b\), da dette giver den mindste kurvelængde, eftersom kurvelængden således bliver længden af den rette linje mellem \(p_a\) og \(p_b\).
+
+Påfører vi restriktionen
+\begin{equation}
+\delta_i = \delta_{i+1}, \quad i=1,...,i=n-2
+\end{equation}
+Tvinges minimeringsprocesson derimod til at udføres for ækvidistante hjørnepunkter.
