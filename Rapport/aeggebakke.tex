@@ -1,5 +1,5 @@
-﻿\newcommand\diff[1]{{#1}'}
-\newcommand\ddiff[1]{{#1}''}
+\newcommand\ddiff[1]{\ddot{#1}}
+\newcommand\diff[1]{\dot{#1}}
 
 \subsection{ Geodæt på ``æggebakke'', del et }
 Vi vil i dette afsnit forsøge at finde geodæter på en ``æggebakke'',
@@ -15,9 +15,9 @@ Lad os først se, hvad der kræves for at finde geodæter på flader af typen:
 \end{equation*}
 
 med geodæter af typen:
-\begin{equation*}
+\begin{equation} \label{eq:geodFlade}
 \pmb{\gamma}(t) = (x(t),~y(t),~f(x(t),~y(t)))
-\end{equation*}
+\end{equation}
 
 %Jf. noget david har skrevet, for håbentligt! Ellers får jeg travlt
 har vi følgende Euler-Lagrange ligninger:
@@ -30,9 +30,9 @@ har vi følgende Euler-Lagrange ligninger:
 
 \paragraph{Geodæt på flat plan}
 Lad os se hvad dette gør for geodæter på det simple plan:
-\begin{equation*}
+\begin{equation}\label{eq:P}
 P(x,~y) = (x,~y,~k)
-\end{equation*}
+\end{equation}
 da vi ved at disse bliver til rette linjer (det svarer til at finde geodæter i \(\mathbb{R}\))
 %
 Vi får da en geodæt på formen:
@@ -48,7 +48,9 @@ L(\pmb{\gamma_p}) = \sqrt{ \diff{x}(t)^2 + \diff{y}(t)^2 }
 hvilket giver følgende Euler-Lagrange ligninger:
 \begin{equation*}
 \begin{gathered}
+\frac{\partial L}{\partial x} - \frac{d}{d t} \frac{\partial L}{\partial \diff{x}} =
 \frac{\diff{y}(t) \cdot ( \ddiff{x}(t)\diff{y}(t) - \ddiff{y}(t)\diff{x}(t) )}{\sqrt{\diff{x}(t)^2 + \diff{y}(t)^2}^3} = 0\\
+\frac{\partial L}{\partial y} - \frac{d}{d t} \frac{\partial L}{\partial \diff{y}} =
 \frac{\diff{x}(t) \cdot ( \ddiff{x}(t)\diff{y}(t) - \ddiff{y}(t)\diff{x}(t) )}{\sqrt{\diff{x}(t)^2 + \diff{y}(t)^2}^3} = 0\\
 \end{gathered}
 \end{equation*}
@@ -80,10 +82,56 @@ Ellers kan differentialligningen ikke tilfredsstilles.
 
 De to funktioner \(\pmb{p_1}(t)\) og \(\pmb{p_2}(t)\) har naturligvis samme kurve,
 ellers var de jo ikke begge geodæter til samme flade, den eneste forskel er at \(t\) ``løber'' med forskellig hastighed.
-Da vi kan lade parameteren for en hver funktion løbe efter \(m(t)\), uden at kurven for denne ændre længde.
-%derp derp dette gælder for alle af denne type
+Da vi kan lade parameteren for en hver funktion løbe efter \(m(t)\), uden at kurven for denne ændre længde,
+betyder det at alle geodæter på formen (\ref{eq:geodFlade}) vil have arbitrære ligninger i deres løsning.
+%For overfladisk?
 
 Der skal dog ikke meget til at forestille sig en flade med en Euler-Lagrange ligning, der er så kompliceret,
 at denne ikke kan løses ved simple ``tricks''. Ønsker man i midlertid at tage \emph{CAS}-programmet \emph{Maple}
-i brug, vil dette også volde en problemer, da det ikke er muligt for \emph{Maple} 
+i brug, vil dette også volde en problemer,
+da det ikke er muligt for \emph{Maple} at løse differential-ligninger med arbitrære funktioner i løsningen.
+
+Derfor er det nødvendigt at parametriserer geodæten yderligere. Hvis vi vælger en parametrisering så
+\begin{gather*}
+x(t) = p(t,~m(t))\\
+y(t) = q(t,~m(t))
+\end{gather*}
+hvor et valg af \(p\) og \(q\) definerer parametriserinen og \(m(t)\) er ligningen, der løses efter.
+Dette kræver dog at der findes geodæter af denne type.
+
+Lad os igen kigge på geodæten \(\pmb{\gamma_p}\) og se hvad der sker, hvis vi parametriserer denne,
+så \(p(t,~m(t) ) = t\) og \(q(t,~m(t) ) = m(t)\).
+Vi får da en geodæt på formen:
+\begin{equation*}
+\pmb{\gamma_p}(t) = (t,~m(t),~k)
+\end{equation*}
+%
+og Lagrange funktionalen:
+\begin{equation*}
+L(\pmb{\gamma_p}) = \sqrt{ 1 + \diff{m}(t)^2 }
+\end{equation*}
+
+Vi ser at Lagrange funktionalen her er afhænging af \(\diff{m}(t)\) 
+hvilket giver følgende Euler-Lagrange ligning:
+\begin{equation*}
+\frac{\partial L}{\partial m} - \frac{d}{d t} \frac{\partial L}{\partial \diff{m}} = 
+\frac{\ddiff{m}(t)}{\sqrt{1 + \diff{m}(t)^2}^3} = 0\\
+\end{equation*}
+
+Det er her tydeligt at se, at løsningen er givet, når \(\ddiff{m}(t) = 0\)
+
+Denne ligning giver én entyding løsning, uden arbitrære funktioner:
+\begin{equation*}
+m(t) = C_1 + C_2 \cdot t
+\end{equation*}
+
+Dette giver geodæter af typen:
+\begin{equation*}
+\pmb{\gamma_p}(t) = (t,~C_1 + C_2 \cdot t,~k)
+\end{equation*}
+ 
+ Ønsker vi at finde geodæten mellem to punkter, skal vi blot løse en ligning med hensyn til \(C_1\) og \(C_2\)
+ Der er dog det problem, at ikke alle geodæter til (\ref{eq:P}) er af denne type. Geodæten fra \((0,~0)\) til \((0,~1)\)
+
+
 %derfor parametrisér
