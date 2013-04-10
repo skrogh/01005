@@ -1,0 +1,89 @@
+﻿\newcommand\diff[1]{{#1}'}
+\newcommand\ddiff[1]{{#1}''}
+
+\subsection{ Geodæt på ``æggebakke'', del et }
+Vi vil i dette afsnit forsøge at finde geodæter på en ``æggebakke'',
+en flade givet ved:
+\begin{equation}\label{eq:aeggebakke}
+F(x,~y) = (x,~y,~a \cdot \cos(x)+~a \cdot \sin(y))
+\end{equation}
+Det vil dog vise sig at dette ikke altid er ligetil.
+
+Lad os først se, hvad der kræves for at finde geodæter på flader af typen:
+\begin{equation*}
+\mathscr{F}(x,~y) = (x,~y,~f(x,~y))
+\end{equation*}
+
+med geodæter af typen:
+\begin{equation*}
+\pmb{\gamma}(t) = (x(t),~y(t),~f(x(t),~y(t)))
+\end{equation*}
+
+%Jf. noget david har skrevet, for håbentligt! Ellers får jeg travlt
+har vi følgende Euler-Lagrange ligninger:
+\begin{equation*}
+\begin{gathered}
+\frac{\partial L}{\partial x} - \frac{d}{dt}\frac{\partial L}{\partial \diff{x}} = 0\\
+\frac{\partial L}{\partial y} - \frac{d}{dt}\frac{\partial L}{\partial \diff{y}} = 0
+\end{gathered}
+\end{equation*}
+
+\paragraph{Geodæt på flat plan}
+Lad os se hvad dette gør for geodæter på det simple plan:
+\begin{equation*}
+P(x,~y) = (x,~y,~k)
+\end{equation*}
+da vi ved at disse bliver til rette linjer (det svarer til at finde geodæter i \(\mathbb{R}\))
+%
+Vi får da en geodæt på formen:
+\begin{equation*}
+\pmb{\gamma_p}(t) = (x(t),~y(t),~k)
+\end{equation*}
+%
+og Lagrange funktionalen:
+\begin{equation*}
+L(\pmb{\gamma_p}) = \sqrt{ \diff{x}(t)^2 + \diff{y}(t)^2 }
+\end{equation*}
+%
+hvilket giver følgende Euler-Lagrange ligninger:
+\begin{equation*}
+\begin{gathered}
+\frac{\diff{y}(t) \cdot ( \ddiff{x}(t)\diff{y}(t) - \ddiff{y}(t)\diff{x}(t) )}{\sqrt{\diff{x}(t)^2 + \diff{y}(t)^2}^3} = 0\\
+\frac{\diff{x}(t) \cdot ( \ddiff{x}(t)\diff{y}(t) - \ddiff{y}(t)\diff{x}(t) )}{\sqrt{\diff{x}(t)^2 + \diff{y}(t)^2}^3} = 0\\
+\end{gathered}
+\end{equation*}
+%
+dette betyder at hverken  \( \diff{x}(t) \) eller \(\diff{y}(t) \) må være nulfunktionen,
+da dette ville resultere i at nævneren også bliver nul.
+
+Den nemme løsning ville være at sætte \(\ddiff{x}(t)\) og \(\ddiff{y}(t)\) til at være nulfunktionerne,
+hvilket naturligvis ville resultere i en ret linje med ligningen:
+\begin{equation*}
+\pmb{p_1}(t) = (C_1 + C_2\cdot t,~C_2 + C_3\cdot t,~k)
+\end{equation*}
+
+Men dette er ikke den eneste løsning. Det skarpe øje vil skue, at hvis
+\( \ddiff{x}(t)\diff{y}(t) = \ddiff{y}(t)\diff{x}(t) \)
+bliver tælleren også \(0\), en anden simpel løsning på ligningssystemet er da:
+\begin{equation*}
+\pmb{p_2}(t) = (C_1 + C_2\cdot m(t),~C_2 + C_3\cdot m(t),~k)
+\end{equation*}
+da
+\begin{equation*}
+\begin{gathered}
+\frac{d^2}{dt^2} (C_1 + C_2\cdot m(t)) \frac{d}{dt} (C_3 + C_4\cdot m(t)) = C_2\ddiff{m}(t) C_4\diff{m}(t) \\
+ = \frac{d}{dt} (C_1 + C_2\cdot m(t)) \frac{d^2}{dt^2} (C_3 + C_4\cdot m(t)) = C_2\diff{m}(t) C_4\ddiff{m}(t) 
+\end{gathered}
+\end{equation*}
+dette kræver selvfælgelig at \( m(t) \) er monoton og differentiabel to gange i det interval, \(t\) løber over.
+Ellers kan differentialligningen ikke tilfredsstilles.
+
+De to funktioner \(\pmb{p_1}(t)\) og \(\pmb{p_2}(t)\) har naturligvis samme kurve,
+ellers var de jo ikke begge geodæter til samme flade, den eneste forskel er at \(t\) ``løber'' med forskellig hastighed.
+Da vi kan lade parameteren for en hver funktion løbe efter \(m(t)\), uden at kurven for denne ændre længde.
+%derp derp dette gælder for alle af denne type
+
+Der skal dog ikke meget til at forestille sig en flade med en Euler-Lagrange ligning, der er så kompliceret,
+at denne ikke kan løses ved simple ``tricks''. Ønsker man i midlertid at tage \emph{CAS}-programmet \emph{Maple}
+i brug, vil dette også volde en problemer, da det ikke er muligt for \emph{Maple} 
+%derfor parametrisér
