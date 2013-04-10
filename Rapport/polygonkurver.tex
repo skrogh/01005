@@ -226,3 +226,13 @@ At finde den korteste vej mellem to punkter på en flade er et minimeringsproble
 \begin{equation}
 p_1=p_a, \cdot\cdot\cdot, p_n=p_b \in \mathbb{R}^3
 \end{equation}
+
+Afstanden mellem to på hinanden følgene hjørnepunkter er
+\begin{equation}
+\delta_i = \sqrt{\left(x_{i+1}-x_i\right)^2+\left(y_{i+1}-y_1\right)^2+\left(f\left(x_{i+1},y_{i+1}\right) - f\left(x_i,y_i\right)\right)^2}, \quad i=1,...,i=n-1
+\end{equation}
+Den polygonkurve der følger den korteste vej mellem dens endepunkter opfylder at
+\begin{equation}
+\mathscr{L}(\pmb{\gamma}_p)=\sum\limits_{i=1}^{n-1}\delta_i=min\left(\sum\limits_{i=1}^{n-1}\delta_i\right)
+\end{equation}
+Polygonkurvens længde kan ændres ved at ændre på hjørnepunkternes placering, dvs. der kan konstrueres en polygonkurve mellem to punkter på en flade, der approksimerer geodæten mellem de to punkter, ved at flytte på polygonkurvens hjørnepunkter. Vi er dog nødt til
