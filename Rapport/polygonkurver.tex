@@ -221,3 +221,8 @@ Ved udregning \(S_n,\ell_n\) for en polygonkurve med 1000 hjørnepunkter haves
 Her ses det at \(S_n\) er den bedre approksimation af kurvelængden. Kigger vi kun på data fra de foregående 3 eksempler kan vi konkludere at \(S_n\) giver en bedre approksimation når kurven der ønskes approksimeret indeholder repetetive funktioner (\(cos,sin\)), og \(\ell_n\) er den bedre approksimation når kurvens parameterfremstilling er af en højere orden.
 
 \subsection{Polygonkurver som geodæter}
+At finde den korteste vej mellem to punkter på en flade er et minimeringsproblem vi tidligere har løst ved at finde geodæter, ved hjælp af Euler-Lagrange ligningen. Geodæter fundet på denne måde kan naturligvis approksimeres med polygonkurver, men vi kan også forsøge at approksimere en geodæt med en polygonkurve, før selve geodæten er kendt. \\
+Ønsker vi en polygonkurve, \(\pmb{\gamma}_p\), der går mellem to punkter, \(p_a\) og \(p_b\), på en flade \(\pmb{F}(x,y)=(x,y,f(x,y))\), må polygonkurven nødvendigvis starte i \(p_a\) og slutte i \(p_b\). Dvs. \(\pmb{\gamma}_p\) har \(n\) hjørnepunkter 
+\begin{equation}
+p_1=p_a, \cdot\cdot\cdot, p_n=p_b \in \mathbb{R}^3
+\end{equation}
