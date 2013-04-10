@@ -1,7 +1,7 @@
 \newcommand\ddiff[1]{\ddot{#1}}
 \newcommand\diff[1]{\dot{#1}}
 
-\subsection{ Geodæt på ``æggebakke'', del et }
+\subsection{ Geodæt på ``æggebakke'' }
 Vi vil i dette afsnit forsøge at finde geodæter på en ``æggebakke'',
 en flade givet ved:
 \begin{equation}\label{eq:aeggebakke}
@@ -9,13 +9,14 @@ F(x,~y) = (x,~y,~a \cdot \cos(x)+~a \cdot \sin(y))
 \end{equation}
 Det vil dog vise sig at dette ikke altid er ligetil.
 
+\subsubsection{Geodæter på flader af typen \(\mathscr{F}(x,~y) = (x,~y,~f(x,~y))\)}
 Lad os først se, hvad der kræves for at finde geodæter på flader af typen:
 \begin{equation*}
 \mathscr{F}(x,~y) = (x,~y,~f(x,~y))
 \end{equation*}
 
 med geodæter af typen:
-\begin{equation} \label{eq:geodFlade}
+\begin{equation} \label{eq:geodPlanFlade}
 \pmb{\gamma}(t) = (x(t),~y(t),~f(x(t),~y(t)))
 \end{equation}
 
@@ -40,7 +41,7 @@ Vi får da en geodæt på formen:
 \pmb{\gamma_p}(t) = (x(t),~y(t),~k)
 \end{equation*}
 %
-og Lagrange funktionalen:
+og Lagrange funktionen:
 \begin{equation*}
 L(\pmb{\gamma_p}) = \sqrt{ \diff{x}(t)^2 + \diff{y}(t)^2 }
 \end{equation*}
@@ -83,7 +84,7 @@ Ellers kan differentialligningen ikke tilfredsstilles.
 De to funktioner \(\pmb{p_1}(t)\) og \(\pmb{p_2}(t)\) har naturligvis samme kurve,
 ellers var de jo ikke begge geodæter til samme flade, den eneste forskel er at \(t\) ``løber'' med forskellig hastighed.
 Da vi kan lade parameteren for en hver funktion løbe efter \(m(t)\), uden at kurven for denne ændre længde,
-betyder det at alle geodæter på formen (\ref{eq:geodFlade}) vil have arbitrære ligninger i deres løsning.
+betyder det at alle geodæter på formen (\ref{eq:geodPlanFlade}) vil have arbitrære ligninger i deres løsning.
 %For overfladisk?
 
 Der skal dog ikke meget til at forestille sig en flade med en Euler-Lagrange ligning, der er så kompliceret,
@@ -106,12 +107,12 @@ Vi får da en geodæt på formen:
 \pmb{\gamma_p}(t) = (t,~m(t),~k)
 \end{equation*}
 %
-og Lagrange funktionalen:
+og Lagrange funktionen:
 \begin{equation*}
 L(\pmb{\gamma_p}) = \sqrt{ 1 + \diff{m}(t)^2 }
 \end{equation*}
 
-Vi ser at Lagrange funktionalen her er afhænging af \(\diff{m}(t)\) 
+Vi ser at Lagrange funktionen her er afhænging af \(\diff{m}(t)\) 
 hvilket giver følgende Euler-Lagrange ligning:
 \begin{equation*}
 \frac{\partial L}{\partial m} - \frac{d}{d t} \frac{\partial L}{\partial \diff{m}} = 
@@ -131,7 +132,63 @@ Dette giver geodæter af typen:
 \end{equation*}
  
  Ønsker vi at finde geodæten mellem to punkter, skal vi blot løse en ligning med hensyn til \(C_1\) og \(C_2\)
- Der er dog det problem, at ikke alle geodæter til (\ref{eq:P}) er af denne type. Geodæten fra \((0,~0)\) til \((0,~1)\)
+ Der er dog det problem, at ikke alle geodæter til (\ref{eq:P}) er af denne type.
+ Geodæten fra \((0,~0)\) til \((0,~1)\) er for eksempel ikke af denne type, da dette giver
+ \begin{equation*}
+ \pmb{\gamma_p}(0) = (0,~0,~k) \neq  \pmb{\gamma_p}(0) = (0,~1,~k)
+ \end{equation*}
+
+Konklutionen er at det ofte simplifiserer differentialligingerne,
+at parametriserer geodæter af typen (\ref{eq:geodPlanFlade}) til
+\begin{equation*}
+\pmb{\gamma}(t) = (p(t,~m(t)),q(t,~m(t)),~f(x(t),~y(t)))
+\end{equation*}
+blot skal man være opmærksom på at vælge en parametrisering, der ikke udelukker den geodæt der ledes efter.
+
+\subsubsection{Geodæt for æggebakke }
+
+Vi kan nu begynde at finde geodæter på flader, formet ``som æggebakker''.
+
+Først findes Euler-Lagrange ligninger for geodæter af typen:
+\begin{equation}\label{eq:aeggegeo}
+\pmb{\gamma}(t) = (x(t),~y(t),~a\cdot\cos(x(t)) + a\cdot\cos(x(t)))
+\end{equation}
+
+Lagrange funktionen findes nemt:
+\begin{equation*}
+L(\pmb{\gamma}(t)) = \sqrt{\diff{x}(t)^2 + \diff{y}(t)^2 + ( -a \cdot \sin(x(t)) + a \cdot \cos(y(t)) )^2}
+\end{equation*}
+
+\begin{lstlisting}[caption=Udregning af de to Lagrange ligninger til (\ref{eq:aeggegeo}) med \emph{Maple}  ]
+>F:=(x,y) -> <x, y, a*cos(x) + a*sin(y)>:
+
+>L:=sqrt( diff(F(x(t),y(t))[1],t)^2 + diff(F(x(t),y(t))[2],t)^2 +diff(F(x(t),y(t))[3],t)^2 ):
+>L:= subs(diff('x(t)',t)=dx, diff('y(t)',t)=dy, diff('m(t)',t)=dm, 'x(t)'=x1, 'y(t)'=y1, 'm(t)'=m1, L):
+
+>dLdy := diff(L,y1):
+>dLddy := diff(L,dy):
+>dLdx := diff(L,x1):
+>dLddx := diff(L,dx):
+
+>dLdx := subs(dx=diff(x(t),t), dy=diff(y(t),t), dm=diff(m(t),t), x1=x(t), y1=y(t), m1=m(t), dLdx):
+>dLddx := subs(dx=diff(x(t),t), dy=diff(y(t),t), dm=diff(m(t),t), x1=x(t), y1=y(t), m1=m(t), dLddx):
+>dLdy := subs(dx=diff(x(t),t), dy=diff(y(t),t), dm=diff(m(t),t), x1=x(t), y1=y(t), m1=m(t), dLdy):
+>dLddy := subs(dx=diff(x(t),t), dy=diff(y(t),t), dm=diff(m(t),t), x1=x(t), y1=y(t), m1=m(t), dLddy):
+
+>diflx := simplify(dLdx - diff(dLddx,t)) = 0;
+>difly := simplify(dLdy - diff(dLddy,t)) = 0;
+
+
+\end{lstlisting}
+
+I linje 4 foretages et antal erstatninger,
+der tillader \emph{Maple} at differenterer med hensyn til en funktion og dens afledte.
+I linerne 6-9 udregnes \(\frac{\partial L}{\partial x}\), \(\frac{\partial L}{\partial y}\),
+ \(\frac{\partial L}{\partial \diff{x}}\) og \(\frac{\partial L}{\partial \diff{y}}\).
+I linjerne 11-14 substitueres modsat af linje 4, så \(dx\) bilver til \(\diff{x}(t)\) etc.
+
+
+
 
 
 %derfor parametrisér
