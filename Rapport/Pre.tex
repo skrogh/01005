@@ -4,9 +4,15 @@
 \usepackage[danish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{graphicx}
 \usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsthm}
+\newtheorem{thm}{Sætning}
+\newtheorem{dfn}{Definition}
+\usepackage{lmodern}
 \graphicspath{{pictures/}}
 %\usepackage{textpos}
 \usepackage{color}
@@ -14,6 +20,14 @@
 \usepackage{listingsutf8}
 \usepackage{courier}
 \usepackage{epstopdf}
+<<<<<<< HEAD
+=======
+%\epstopdfsetup{update,prepend,verbose,suffix=-generated} % use suffix because you don't want to accidentally overwrite a file that might have been a pdf source. The epstopdf package manual has more on that.
+
+\DeclareGraphicsExtensions{.eps,.pdf}
+
+\epstopdfDeclareGraphicsRule{.eps}{pdf}{.pdf}{epstopdf --gsopt="-dPDFSETTINGS=/prepress -dAutoFilterColorImages=false -dAutoFilterGrayImages=false -sColorImageFilter=FlateEncode -sGrayImageFilter=FlateEncode -sCompressPages=false -dPreserveHalftoneInfo=true" #1 --outfile=\OutputFile}
+>>>>>>> 71b43b570be9a57fe170d7e5eaa4cbfa4b65ed57
  
  \usepackage{hyperref}
 
