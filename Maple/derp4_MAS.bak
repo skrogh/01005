@@ -212,16 +212,43 @@
 </Group>
 <Group labelreference="L148" drawlabel="true">
 <Input>
-<Text-field prompt="&gt; " style="Maple Input" layout="Normal">polylength:=delta(deltai(gammax,gammay,i) i=1..n-2)</Text-field>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">polylength:=delta(deltai(gammax,gammay,i), i=1..n-2)</Text-field>
 </Input>
 <Output>
 <Text-field style="HyperlinkWarning" layout="HyperlinkWarning"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20inserted%20missing%20semicolon%20at%20end%20of%20statement" hyperlink="true"><Font style="HyperlinkWarning">Warning, inserted missing semicolon at end of statement</Font></Hyperlink></Text-field>
 </Output>
 <Output>
-<Text-field style="HyperlinkError" layout="HyperlinkError"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Error,%20bad%20index%20into%20Vector" hyperlink="true"><Font style="HyperlinkError">Error, bad index into Vector</Font></Hyperlink></Text-field>
+<Text-field style="HyperlinkError" layout="HyperlinkError"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Error,%20(in%20deltai)%20bad%20index%20into%20Vector" hyperlink="true"><Font style="HyperlinkError">Error, (in deltai) bad index into Vector</Font></Hyperlink></Text-field>
 </Output>
 </Group>
 <Group labelreference="L163" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+<Output>
+<Text-field style="HyperlinkWarning" layout="HyperlinkWarning"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20inserted%20missing%20semicolon%20at%20end%20of%20statement" hyperlink="true"><Font style="HyperlinkWarning">Warning, inserted missing semicolon at end of statement</Font></Hyperlink></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYnLUkjbW9HRiQ2LVEqJnVtaW51czA7RicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y0LyUpc3RyZXRjaHlHRjQvJSpzeW1tZXRyaWNHRjQvJShsYXJnZW9wR0Y0LyUubW92YWJsZWxpbWl0c0dGNC8lJ2FjY2VudEdGNC8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRkMtRiM2Ji1JI21uR0YkNiRRIjJGJ0YvLUYsNi1RMSZJbnZpc2libGVUaW1lcztGJ0YvRjJGNUY3RjlGO0Y9Rj8vRkJRJjAuMGVtRicvRkVGUC1JI21pR0YkNiVRJyYjOTYwO0YnLyUnaXRhbGljR0Y0Ri9GLy8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGNEYv">LCRJI1BpRyUqcHJvdGVjdGVkRyEiIw==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L164" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">evalf(delta(gammax,gammay));</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">JCIrP2k8TEAhIik=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L165" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">evalf(delta(Xop,Yop));</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkjbW5HNiMvSSttb2R1bGVuYW1lRzYiSSxUeXBlc2V0dGluZ0dJKF9zeXNsaWJHRic2JFExMTkuMjM3MTY4Njc2NjIyM0YnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJw==">XTQwMzMzQ0I3MTYxREJBNjk=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L166" drawlabel="true">
 <Input>
 <Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
 </Input>
