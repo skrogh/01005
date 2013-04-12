@@ -7,6 +7,9 @@ en flade givet ved:
 \begin{equation}\label{eq:aeggebakke}
 F(x,~y) = (x,~y,~a \cdot \cos(x)+~a \cdot \sin(y))
 \end{equation}
+
+Det vil dog vise sig at dette ikke altid er ligetil.
+
 Variablen \(a\) bestemmer ``dybden'' på æggebakken.
 Grafen for en æggebakke med \(a = 2\) er plottet i figur~\ref(fig:aeg)
 \begin{figure}[h!]
@@ -23,7 +26,8 @@ Lad os først se, hvad der kræves for at finde geodæter på flader af typen:
 \end{equation*}
 
 med geodæter af typen:
-\begin{equation} \label{eq:geodPlanFlade}
+
+\begin{equation} \label{eq:geodFlade}
 \pmb{\gamma}(t) = (x(t),~y(t),~f(x(t),~y(t)))
 \end{equation}
 
@@ -48,20 +52,24 @@ Vi får da en geodæt på formen:
 \pmb{\gamma_p}(t) = (x(t),~y(t),~k)
 \end{equation*}
 %
+
 og Lagrange funktionen:
+
 \begin{equation*}
 L(\pmb{\gamma_p}) = \sqrt{ \diff{x}(t)^2 + \diff{y}(t)^2 }
 \end{equation*}
 %
 hvilket giver følgende Euler-Lagrange ligninger:
-\begin{equation} \label{eq:ELPlanFlade}
+
+\begin{equation*}
 \begin{gathered}
 \frac{\partial L}{\partial x} - \frac{d}{d t} \frac{\partial L}{\partial \diff{x}} =
 \frac{\diff{y}(t) \cdot ( \ddiff{x}(t)\diff{y}(t) - \ddiff{y}(t)\diff{x}(t) )}{\sqrt{\diff{x}(t)^2 + \diff{y}(t)^2}^3} = 0\\
 \frac{\partial L}{\partial y} - \frac{d}{d t} \frac{\partial L}{\partial \diff{y}} =
-\frac{\diff{x}(t) \cdot ( \ddiff{x}(t)\diff{y}(t) - \ddiff{y}(t)\diff{x}(t) )}{\sqrt{\diff{x}(t)^2 + \diff{y}(t)^2}^3} = 0\\
+\frac{\diff{x}(t) \cdot ( \ddiff{x}(t)\diff{y}(t) - \ddiff{y}(t)\diff{x}(t) )}{\sqrt{\diff{x}(t)^2 + \diff{y}(t)^2}^}} = 0\\
 \end{gathered}
-\end{equation}
+\end{equation*}
+
 %
 dette betyder at hverken  \( \diff{x}(t) \) eller \(\diff{y}(t) \) må være nulfunktionen,
 da dette ville resultere i at nævneren også bliver nul.
@@ -91,8 +99,9 @@ Ellers kan differentialligningen ikke tilfredsstilles.
 De to funktioner \(\pmb{p_1}(t)\) og \(\pmb{p_2}(t)\) har naturligvis samme kurve,
 ellers var de jo ikke begge geodæter til samme flade, den eneste forskel er at \(t\) ``løber'' med forskellig hastighed.
 Da vi kan lade parameteren for en hver funktion løbe efter \(m(t)\), uden at kurven for denne ændre længde,
-betyder det at alle geodæter på formen (\ref{eq:geodPlanFlade}) vil have arbitrære ligninger i deres løsning.
-%For overfladisk?
+
+betyder det at alle geodæter på formen (\ref{eq:geodFlade}) vil have arbitrære ligninger i deres løsning.
+
 
 Der skal dog ikke meget til at forestille sig en flade med en Euler-Lagrange ligning, der er så kompliceret,
 at denne ikke kan løses ved simple ``tricks''. Ønsker man i midlertid at tage \emph{CAS}-programmet \emph{Maple}
@@ -115,12 +124,15 @@ Vi får da en geodæt på formen:
 \pmb{\gamma_p}(t) = (t,~m(t),~k)
 \end{equation*}
 %
+
 og Lagrange funktionen:
 \begin{equation*}
 L(\pmb{\gamma_p}) = \sqrt{ 1 + \diff{m}(t)^2 }
 \end{equation*}
 
-Vi ser at Lagrange funktionen her er afhænging af \(\diff{m}(t)\) 
+Vi ser at Lagrange funktionalen her er afhænging af \(\diff{m}(t)\) 
+
+Vi ser at Lagrange funktionen her er afhænging af \(\diff{m}(t)\)
 hvilket giver følgende Euler-Lagrange ligning:
 \begin{equation*}
 \frac{\partial L}{\partial m} - \frac{d}{d t} \frac{\partial L}{\partial \diff{m}} = 
@@ -140,6 +152,8 @@ Dette giver geodæter af typen:
 \end{equation*}
  
  Ønsker vi at finde geodæten mellem to punkter, skal vi blot løse en ligning med hensyn til \(C_1\) og \(C_2\)
+
+%derfor parametrisér
  Der er dog det problem, at ikke alle geodæter til (\ref{eq:P}) er af denne type.
  Geodæten fra \((0,~0)\) til \((0,~1)\) er for eksempel ikke af denne type, da dette giver
  \begin{equation*}
