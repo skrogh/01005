@@ -1,0 +1,157 @@
+
+\begin{dfn} {\bf Variationsafledt}\\
+Lad $F : C^\infty ([0,1]^n, \mathbb{R}^m) \to \mathbb{R}$ være et funktional over vektorrummet $C^\infty([0,1]^n, \mathbb{R}^m)$ over $\mathbb{R}$. Den variationsafledte af $F$ for $\mathbf{f}\in C^\infty ([0,1]^n, \mathbb{R}^m)$ i retningen ${\boldsymbol \nu}\in C^\infty ([0,1]^n, \mathbb{R}^m)$ er
+\begin{align*}
+\delta F(\mathbf{f}, {\boldsymbol \nu}) = \lim_{\tau \to 0} \frac{F(\mathbf{f}+\tau{\boldsymbol \nu})-F(\mathbf{f})}{\tau} = \frac{d}{d\tau} F(\mathbf{f}+\tau {\boldsymbol \nu}) \Big|_{\tau = 0}
+\end{align*}
+\end{dfn}
+
+
+\begin{dfn} {\bf Variation}\\
+En variation ${\boldsymbol \nu}$ er en funktion ${\boldsymbol \nu} \in C^\infty ([0,1]^n, \mathbb{R}^m)$ som opfylder $\textnormal{supp}\, {\boldsymbol \nu} \subset (0,1)^n$ (afslutningen af mængden hvori ${\boldsymbol \nu}$ ikke er identisk med nulfunktionen er en delmængde af $ (0,1)^n$), dvs. ${\boldsymbol \nu}$ er ihvertfald nulvektoren langs randen af $[0,1]^n$.
+\end{dfn}
+
+
+\begin{dfn} {\bf Lagrangefunktional i $\mathbb{R}^3$}\\
+Lagrangefunktionalet $L : C^\infty ([0,1], \mathbb{R}^3) \to \mathbb{R}$ er defineret som integralet af en Lagrangefunktion $\mathcal{L} : [0,1] \times \mathbb{R}^3 \times \mathbb{R}^3 \to \mathbb{R}$ komposeret med $g=(t,{\boldsymbol \gamma}(t),\dot{\boldsymbol \gamma}(t))$ hvor ${\boldsymbol \gamma} \in C^\infty ([0,1], \mathbb{R}^3)$
+\begin{align*}
+L({\boldsymbol \gamma})= \int_0^1 (\mathcal{L}\circ g)(t) \, dt =\int_0^1 \mathcal{L}(t, {\boldsymbol \gamma}(t),\dot{{\boldsymbol \gamma}}(t)) \, dt
+\end{align*}
+\end{dfn}
+
+
+\begin{thm} {\bf Fundamentalsætningen i Variationsregning}\\
+Lad $f_m : [0,1]^n \to \mathbb{R}$ være en kontinuerlig funktion for hvert $m \in \{1, 2, \cdots, M \}$ og lad ligeledes $\nu_m : [0,1]^n \to \mathbb{R}$ være vilkårlige kontinuerlige funktioner $\textnormal{supp}\, \nu_m \subset (0,1)^n$.
+\begin{align*}
+\int_{[0,1]^n} \sum_{m=1}^M f_m \nu_m = 0 \quad \textnormal{for ethvert valg af $\nu_m$}
+\end{align*}
+hvis og kun hvis 
+\begin{align*}
+\forall m : f_m \equiv 0
+\end{align*}
+\end{thm}
+
+
+\begin{proof} Reductio ad absurdum. Lad for hvert $m$ funktionerne $\nu_m $ være $\nu_m = f_m \eta_m$ hvor $\eta_m$ er endnu en vilkårlig funktion som opfylder betingelserne med den ekstra egenskab $\eta_m(x) >0$ i $\textnormal{supp}\, \eta_m$ således at $(f_m \nu_m)(x) = (f^2_m \eta_m)(x) \geq 0$ i hele $[0,1]^n$. Antag at for mindst en af funktionerne $f^2_p \eta_p$ et punkt $x_0 \in [0,1]^n$  eksisterer hvori $(f^2_p \eta_p)(x_0)>0$, idet funktionerne og dermed produktet er kontinuerligt, så eksisterer en åben kugle $B(x_0,\delta) \subset [0,1]^n$ om $x_0$ hvori $(f^2_p \eta_p)(x)>0$ (hvis ikke, så gælder for alle åbne kugler om $x_0$ at der eksisterer $x$ i kuglen så $(f^2_p \eta_p)(x)=0$ og $(f^2_p \eta_p)(x_0) \neq 0$ hvilket er i modstrid med kontinuitet). Integralet opfylder dermed $\int_{ B(x_0,\delta)} f^2_p \eta_p > 0$ og
+\begin{align*}
+0&=\int_{[0,1]^n} \sum_{m=1}^M f^2_m \eta_m  \\
+&=\sum_{m=1}^M \Big(\int_{[0,1]^n\setminus B(x_0,\delta)}f^2_m \eta_m + \int_{ B(x_0,\delta)} f^2_m \eta_m \Big) \\
+&\geq 0+\sum_{m=1}^M\int_{ B(x_0,\delta)} f^2_m \eta_m > 0
+\end{align*}
+hvilket er i modstrid med antagelsen og derfor $(f^2_m \eta_m)(x)= 0$ i $\textnormal{supp}\, \eta_m$ så $f_m(x) = 0$ i $\textnormal{supp}\, \eta_m$. Da $\eta_m$ var vilkårlig og $\textnormal{supp}\, \eta_m \subset (0,1)^n$ så $f_m(x) = 0$ i $(0,1)^n$ og sidst i $[0,1]^n$ som følge af kontinuitet langs randen - således følger $\forall m : f_m \equiv 0$. Omvendt hvis $\forall m : f_m \equiv 0$ så er integralet trivielt nul og sætningen er bevist.
+\end{proof}
+
+
+\begin{thm} {\bf Nødvendig betingelse for lokalt minimum}\\
+Lad $F : C^\infty ([0,1]^n, \mathbb{R}^m) \to \mathbb{R}$. Hvis $F(\mathbf{f}_0+\tau {\boldsymbol \nu}) \geq F(\mathbf{f}_0)$ for alle $\tau\in (-\delta, \delta)$ og for alle variationer ${\boldsymbol \nu}$ så er $\delta F(\mathbf{f}_0, {\boldsymbol \nu})=0$ for alle variationer ${\boldsymbol \nu}$.
+\end{thm}
+\begin{proof} Bemærk at $F(\mathbf{f}_0+\tau {\boldsymbol \nu}) - F(\mathbf{f}_0) \geq 0$. Da den variationsafledte eksisterer (antages altid i denne rapport) så skal de to grænseværdier (i $(-\delta,0)$ mod højre og $(0,\delta)$ mod venstre)
+\begin{align*}
+\lim_{\tau \to 0^+} \frac{F(\mathbf{f}+\tau{\boldsymbol \nu})-F(\mathbf{f})}{\tau} \geq 0 \\
+\lim_{\tau \to 0^-} \frac{F(\mathbf{f}+\tau{\boldsymbol \nu})-F(\mathbf{f})}{\tau} \leq 0
+\end{align*}
+være sammenfaldende $\delta F(\mathbf{f}_0, {\boldsymbol \nu})=0$ for alle variationer.
+\end{proof}
+
+
+
+\begin{thm} {\bf Euler-Lagrange Ligningerne i $\mathbb{R}^3$}\\
+Lad $\mathcal{L} : [0,1] \times \mathbb{R}^3 \times \mathbb{R}^3 \to \mathbb{R}$ og ${\boldsymbol \gamma}_0 : [0,1] \to \mathbb{R}^3$ være $C^2$ funktioner. Førstevariationen opfylder $\delta L({\boldsymbol \gamma}_0, {\boldsymbol \nu}) = 0$ for alle variationer ${\boldsymbol \nu} :  [0,1] \to \mathbb{R}^3$ hvis og kun hvis
+\begin{align}
+\frac{\partial\mathcal{L}}{\partial x} -\frac{d}{dt}\frac{\partial\mathcal{L}}{\partial \dot{x}} &= 0 \\
+\frac{\partial\mathcal{L}}{\partial y} -\frac{d}{dt} \frac{\partial\mathcal{L}}{\partial \dot{y}} &=0 \\
+\frac{\partial\mathcal{L}}{\partial z} -\frac{d}{dt} \frac{\partial\mathcal{L}}{\partial \dot{z}} &=0
+\end{align}
+hvor $x$, $y$, $z$ refererer til anden, tredje og fjerde argumenter i $\mathcal{L}$ og lignende for $\dot{x}$, $\dot{y}$, $\dot{z}$.
+\end{thm}
+\begin{proof} I det følgende benyttes ombytning af integral og afledt (nemt at bevise tilladeligt for en $C^2$ integrand), partiel integration på hver komponent af typen $\frac{\partial\mathcal{L}}{\partial \dot{z}} \dot{\nu}_3$ og det faktum at komponenterne af $ {\boldsymbol \nu}$ opfylder $\nu_m(0)=0$ og $\nu_m(1)=0$ for $m=1,2,3$. Variationen er
+\begin{align*}
+\delta L({\boldsymbol \gamma}_0, {\boldsymbol \nu}) &= \frac{\partial}{\partial \epsilon} \int_0^1 \mathcal{L}(t, {\boldsymbol \gamma}_0(t)+\epsilon {\boldsymbol \nu}(t),\dot{{\boldsymbol \gamma}_0}(t)+\epsilon \dot{{\boldsymbol \nu}}(t)) \, dt \Big|_{\epsilon = 0} \\
+&=
+\int_0^1\frac{\partial}{\partial \epsilon} \mathcal{L}(t, {\boldsymbol \gamma}_0(t)+\epsilon {\boldsymbol \nu}(t),\dot{{\boldsymbol \gamma}_0}(t)+\epsilon \dot{{\boldsymbol \nu}}(t))\Big|_{\epsilon = 0} \, dt \\
+&=
+\int_0^1 \frac{\partial  \mathcal{\mathcal{L}}}{\partial t} \frac{\partial t}{\partial \epsilon} + \frac{\partial\mathcal{L}}{\partial x} \nu_1 + \frac{\partial\mathcal{L}}{\partial y} \nu_2 + \frac{\partial\mathcal{L}}{\partial z} \nu_3 + \frac{\partial\mathcal{L}}{\partial \dot{x}} \dot{\nu}_1 + \frac{\partial\mathcal{L}}{\partial \dot{y}} \dot{\nu}_2 + \frac{\partial\mathcal{L}}{\partial \dot{z}} \dot{\nu}_3 \, dt \\
+&=
+\int_0^1  \frac{\partial\mathcal{L}}{\partial x} \nu_1 + \frac{\partial\mathcal{L}}{\partial y} \nu_2 + \frac{\partial\mathcal{L}}{\partial z} \nu_3 -\frac{d}{dt}\frac{\partial\mathcal{L}}{\partial \dot{x}} \nu_1 -\frac{d}{dt} \frac{\partial\mathcal{L}}{\partial \dot{y}} \nu_2 -\frac{d}{dt} \frac{\partial\mathcal{L}}{\partial \dot{z}} \nu_3 \, dt \\
+&=
+\int_0^1 \Big( \frac{\partial\mathcal{L}}{\partial x} -\frac{d}{dt}\frac{\partial\mathcal{L}}{\partial \dot{x}} \Big) \nu_1  + \Big( \frac{\partial\mathcal{L}}{\partial y} -\frac{d}{dt} \frac{\partial\mathcal{L}}{\partial \dot{y}} \Big) \nu_2  +
+\Big( \frac{\partial\mathcal{L}}{\partial z} -\frac{d}{dt} \frac{\partial\mathcal{L}}{\partial \dot{z}} \Big) \nu_3 \, dt \\
+&=0
+\end{align*}
+hvis og kun hvis 
+\begin{align*}
+\frac{\partial\mathcal{L}}{\partial x} -\frac{d}{dt}\frac{\partial\mathcal{L}}{\partial \dot{x}} &= 0 \\
+\frac{\partial\mathcal{L}}{\partial y} -\frac{d}{dt} \frac{\partial\mathcal{L}}{\partial \dot{y}} &=0 \\
+\frac{\partial\mathcal{L}}{\partial z} -\frac{d}{dt} \frac{\partial\mathcal{L}}{\partial \dot{z}} &=0
+\end{align*}
+hvilket følger direkte af fundamentalsætningen i variationsregning.
+\end{proof}
+
+
+\newpage
+
+
+\begin{dfn} {\bf Geodætisk Kurve}\\
+En geodætisk kurve er en funktion ${\boldsymbol \gamma}_0 \in C^\infty ([0,1],\mathbb{R}^m)$ som opfylder $L({\boldsymbol \gamma}_0+\tau {\boldsymbol \nu}) \geq L({\boldsymbol \gamma}_0)$ for $\tau$ i et åbent interval om $0$ og for alle variationer ${\boldsymbol \nu}$ hvor funktionalet $L$ er afstanden $L({\boldsymbol \gamma})=\int^1_0 ||\dot{\boldsymbol \gamma}_0(t)|| \, dt$ (Lagrangefunktionen er normen $||\cdot||$).
+\end{dfn}
+
+\begin{thm} {\bf Geodæter på en Kugle}\\
+\noindent For nogle meget symmetriske (eller konstruerede) flader, såsom kuglen, eksisterer en simpel analytisk løsning til Euler-Lagrange ligningerne for familien af geodætiske kurver på fladen. For en kugle i $\mathbb{R}^3$ med radius $\rho$ består familien af alle de kurver som dannes af intersektionen af et plan igennem origo $ax+by+cz=0$ med kuglefladen $x^2 + y^2 +z^2 =\rho^2$. 
+\end{thm}
+
+\begin{proof}
+Lad ${\boldsymbol \gamma} =(t, \theta(t)) $ være en enhedsparametriseret kurve ${\boldsymbol \gamma} : [0,1] \rightarrow \mathbb{R}^2$ og lad funktionen $\mathbf{f}(\phi,\theta) = (\rho\cos(\theta)\sin(\phi), \rho\sin(\theta)\sin(\phi), \rho\cos(\phi))$ være en parametrisering af kuglen således at $\mathbf{f} \circ {\boldsymbol \gamma}(0)=\mathbf{a}$ og $\mathbf{f} \circ {\boldsymbol \gamma}(1)=\mathbf{b}$ hvor $\mathbf{a}$ og $\mathbf{b}$ er to ikke-sammenfaldende punkter på kuglen. Den resulterende integrand er $|| \frac{d}{dt}(\mathbf{f} \circ {\boldsymbol \gamma})(t) ||$ og afstanden $L$ er
+\begin{align*}
+L({\boldsymbol \gamma}) &= \int_0^1 ||\frac{d}{dt}(\mathbf{f} \circ {\boldsymbol \gamma})(t) || \, dt \\
+&= \int_0^1 \rho\sqrt{\big( \cos(\theta)\cos(t)-\sin(\theta)\sin(t) \frac{d\theta}{dt} \big)^2 + \big(\sin(\theta)\cos(t)+\cos(\theta)\sin(t) \frac{d\theta}{dt} \big)^2 + \sin^2(t)} \, dt\\
+&= \int_0^1 \rho\sqrt{1+\sin^2(t) \big(\frac{d\theta}{dt} \big)^2} \, dt
+\end{align*}
+Lad $\mathcal{L}(t,\theta(t),\frac{d\theta}{dt}(t))= \rho\sqrt{1+\sin^2(t) (\frac{d\theta}{dt})^2}$. Den tilhørende Euler-Lagrange ligning er
+\begin{align*}
+\frac{\partial \mathcal{L}}{\partial \theta} - \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{\theta}} &= 0-\rho \frac{d}{dt}\Big( \frac{\sin^2(t)\frac{d\theta}{dt}}{\sqrt{1+\sin^2(t) \big(\frac{d\theta}{dt} \big)^2}} \Big) = 0 \\
+&\Rightarrow \quad \frac{\sin^2(t)\frac{d\theta}{dt}}{\sqrt{1+\sin^2(t) \big(\frac{d\theta}{dt} \big)^2}} = k \\
+&\Rightarrow \quad
+\sin^4(t)\big(\frac{d\theta}{dt} \big)^2 = k^2 \Big( 1+\sin^2(t) \big(\frac{d\theta}{dt} \big)^2 \Big) \\
+&\Rightarrow \quad
+\big(\frac{d\theta}{dt} \big)^2 = \frac{k^2}{\sin^2(t)(\sin^2(t)-k^2)}
+\end{align*}
+Hvor $|k|<1$ er en vilkårlig konstant. Løsningen kan dermed udtrykkes som integralet
+\begin{align*}
+\theta(t) = \epsilon_0 \int_{t_0}^t \frac{|k|}{|\sin(s)|\sqrt{\sin^2(s)-k^2}} \, ds
+\end{align*}
+Størrelsen $\epsilon_0 = \textnormal{sgn}(\frac{d\theta}{dt}) $ er en fortegnsfaktor, et artifakt af $(\frac{d\theta}{dt})^2$ (kurvens orientering).
+
+
+\newpage
+\noindent Integralet kan udføres ved først at substituere $s=\arctan(u)$ og derefter $u=\frac{|k|}{\sqrt{1-k^2}}\sec(v)$. Vælg $t_0$ og $t$ så $\frac{|k|\cot(t_0)}{\sqrt{1-k^2}}<1$ og $\frac{|k|\cot(t)}{\sqrt{1-k^2}}<1$ (en omparametrisering tillader et vilkårligt valg). Forsigtig fremgang med fortegn viser
+\begin{align*}
+\theta(t) &= \epsilon_0 \int_{t_0}^t \frac{|k|}{|\sin(s)|\sqrt{\sin^2(s)-k^2}} \, ds \\
+&=
+\epsilon_0 \int^{\tan(t)}_{\tan(t_0)} \frac{|k|}{|\frac{u}{\sqrt{1+u^2}}|\sqrt{k^2 \frac{u^2}{1+u^2}-k^2}} \frac{1}{1+u^2}\, du \\
+&=
+\epsilon_0 \int^{\tan(t)}_{\tan(t_0)} \frac{\frac{|k|}{\sqrt{1-k^2}}}{|u|\sqrt{u^2 -\frac{k^2}{1-k^2}}}\, du \\
+&=
+\epsilon_0 \int^{\arccos(\frac{|k|\cot(t)}{\sqrt{1-k^2}})}_{\arccos(\frac{|k|\cot(t_0)}{\sqrt{1-k^2}})} \frac{1}{|\frac{|k|}{\sqrt{1-k^2}}\sec(v)|\sqrt{\sec^2(u) - 1}}\, \frac{|k|}{\sqrt{1-k^2}}\sec(v)\tan(v)\, dv \\
+&=
+\epsilon_0 \int^{\arccos(\frac{|k|\cot(t)}{\sqrt{1-k^2}})}_{\arccos(\frac{|k|\cot(t_0)}{\sqrt{1-k^2}})} \frac{\sec(v)\tan(v)}{|\sec(v)||\tan(v)|} \, dv \\
+&=
+\epsilon_0 \int^{\arccos(\frac{|k|\cot(t)}{\sqrt{1-k^2}})}_{\arccos(\frac{|k|\cot(t_0)}{\sqrt{1-k^2}})} \frac{\sin(v)}{|\sin(v)|} \, dv \\
+&=
+\epsilon_0 \int^{\arccos(\frac{|k|\cot(t)}{\sqrt{1-k^2}})}_{\arccos(\frac{|k|\cot(t_0)}{\sqrt{1-k^2}})} \, dv
+\end{align*}
+Bemærk at $\frac{\sin(u)}{|\sin(u)|}=1$ idet $[\arccos(\frac{|k|\cot(t_0)}{\sqrt{1-k^2}}),\arccos(\frac{|k|\cot(t)}{\sqrt{1-k^2}})] \subset (0,\frac{1}{2}\pi)$. Integralet er således
+\begin{align*}
+&=
+\epsilon_0 \Big(\arccos\big(\frac{|k|\cot(t)}{\sqrt{1-k^2}}\big) - \arccos\big(\frac{|k|\cot(t_0)}{\sqrt{1-k^2}}\big)\Big)
+\end{align*}
+Lad $c=- \arccos\big(\frac{|k|\cot(t_0)}{\sqrt{1-k^2}}\big)$, resultatet kan da omskrives  
+\begin{align*}
+\cos (\epsilon_0\theta - c)\sin(t) = \cos (c)\cos(\theta)\sin(t)+\epsilon_0 \sin(c)\sin(\theta) \sin(t) =
+\frac{|k|\cos(t)}{\sqrt{1-k^2}} 
+\end{align*}
+Identificeres første $x=\rho\cos(\theta)\sin(t)$, anden $y=\rho\sin(\theta)\sin(t)$ og tredje $z=\rho\cos(t)$ koordinat, så er det endelige udtryk netop 
+\begin{align*}
+\cos (c)x+\epsilon_0\sin(c)y - \frac{|k|z}{\sqrt{1-k^2}}=0 
+\end{align*}
+Hvilket er af formen $ax+by+cz=0$ - et plan igennem origo.
+\end{proof}
