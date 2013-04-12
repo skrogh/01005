@@ -1,0 +1,19 @@
+\select@language {danish}
+\contentsline {figure}{\numberline {1}{\ignorespaces Plot af geod\IeC {\ae }t p\IeC {\r a} cylinder hvor $Z_a\not =Z_b$ er g\IeC {\ae }ldende \relax }}{8}{figure.caption.4}
+\contentsline {figure}{\numberline {2}{\ignorespaces Plot af geod\IeC {\ae }t p\IeC {\r a} en cylinder hvor $Z_a=Z_b$ er g\IeC {\ae }ldende\relax }}{9}{figure.caption.5}
+\contentsline {figure}{\numberline {3}{\ignorespaces Plot af geod\IeC {\ae }t s\IeC {\ae }rtilf\IeC {\ae }lde og hvor cylinder ikke er vidst\relax }}{10}{figure.caption.6}
+\contentsline {figure}{\numberline {4}{\ignorespaces Plot af geog\IeC {\ae }t mellem 2 punkter beliggende over hinanden\relax }}{10}{figure.caption.7}
+\contentsline {figure}{\numberline {6}{\ignorespaces Den rette linje (nederst) og vores geod\IeC {\ae }t (\IeC {\o }verst)\relax }}{15}{figure.caption.9}
+\contentsline {figure}{\numberline {6}{\ignorespaces Den rette linje (nederst) og vores geod\IeC {\ae }t (\IeC {\o }verst)\relax }}{15}{figure.caption.9}
+\contentsline {figure}{\numberline {7}{\ignorespaces Den gr\IeC {\o }nne linje er geod\IeC {\ae }ten, og den sorte er den lige linje i (x,y)-planen\relax }}{17}{figure.caption.10}
+\contentsline {figure}{\numberline {8}{\ignorespaces Plot af fladen \(F(x,~y) = (x,~y,~a \cdot \qopname \relax o{cos}(x)+~a \cdot \qopname \relax o{sin}(y))\) for \(a=2\)\relax }}{20}{figure.caption.11}
+\contentsline {figure}{\numberline {9}{\ignorespaces Geod\IeC {\ae }ter af typen \(\pmb {\gamma }(t) = (t,~m(t),~a\qopname \relax o{cos}(t) + a\qopname \relax o{sin}(m(t)))\) i sort; samt linjen (bl\IeC {\r a}) der forbinder dennes endepunkter i \(\PazoBB {R}^2\) projeceret p\IeC {\r a} fladen \(F(x,~y)=(x,~y,~a\qopname \relax o{cos}(x)+a\qopname \relax o{sin}(y))\).\relax }}{26}{figure.caption.14}
+\contentsline {figure}{\numberline {10}{\ignorespaces Geod\IeC {\ae }ter af typen \(\pmb {\gamma }(t) = (t,~m(t),~a\qopname \relax o{cos}(t) + a\qopname \relax o{sin}(m(t)))\) i sort; samt linjen (bl\IeC {\r a}) der forbinder dennes endepunkter i \(\PazoBB {R}^2\) projeceret p\IeC {\r a} fladen \(F(x,~y)=(x,~y,~a\qopname \relax o{cos}(x)+a\qopname \relax o{sin}(y))\).\relax }}{26}{figure.caption.15}
+\contentsline {figure}{\numberline {11}{\ignorespaces En slinky beskrevet ved \(\gamma (t)=((10+4cos(20t))cos(t), (10+4cos(20t))sin(t), 5t+8sin(20t))\)\relax }}{30}{figure.caption.17}
+\contentsline {figure}{\numberline {12}{\ignorespaces Polygonkurven med 10 punkter p\IeC {\r a} \(\gamma \)\relax }}{31}{figure.caption.18}
+\contentsline {figure}{\numberline {13}{\ignorespaces Polygonkurven med 100 punkter p\IeC {\r a} \(\gamma \)\relax }}{32}{figure.caption.19}
+\contentsline {figure}{\numberline {14}{\ignorespaces Polygonkurven med 1000 punkter p\IeC {\r a} \(\gamma \)\relax }}{32}{figure.caption.20}
+\contentsline {figure}{\numberline {15}{\ignorespaces Afbildning af \(\pmb {\gamma }_1(t)\)\relax }}{33}{figure.caption.21}
+\contentsline {figure}{\numberline {16}{\ignorespaces Afbildning af \(\pmb {\gamma }_2(t)\)\relax }}{34}{figure.caption.22}
+\contentsline {figure}{\numberline {17}{\ignorespaces Grafen for chokolade\IeC {\ae }sken, \(\pmb {F}(x,y)\)\relax }}{35}{figure.caption.23}
+\contentsline {figure}{\numberline {18}{\ignorespaces Her ses den minimerede polygonkurve som den sorte rumkurve og den originale polygonkurve som den bl\IeC {\r a} rumkurve.\relax }}{36}{figure.caption.24}

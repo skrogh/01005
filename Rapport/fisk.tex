@@ -7,7 +7,9 @@ en parameterfremstilling for en funktion i planen er (t , y(t)). Det sættes ind
 $\sqrt{(\frac{d}{dt}t)^2+\frac{d}{dt}y(t))^2}=\sqrt{1+\dot{y}^2}$
 
 Det sættes ind i Euler-Lagrange
-
-$\frac{d}{dt} \frac{\partial L}{\partial \dot{y}}(\sqrt{1+\dot{y}^2})=\frac{d}{dt} \frac{\dot{y}}{\sqrt{1+\dot{y}^2}} = \frac{\ddot{y}}{\sqrt{1+\dot{y}^2}}-\frac{\dot{y}^2\ddot{y}}{(1+\dot{y}^2)^\frac{3}{2}}=\frac{\ddot{y}}{(1+\dot{y}^2)^\frac{3}{2}}=0$
+ 
+\begin{equation}
+\frac{d}{dt} \frac{\partial L}{\partial \dot{y}}(\sqrt{1+\dot{y}^2})=\frac{d}{dt} \frac{\dot{y}}{\sqrt{1+\dot{y}^2}} = \frac{\ddot{y}}{\sqrt{1+\dot{y}^2}}-\frac{\dot{y}^2\ddot{y}}{(1+\dot{y}^2)^\frac{3}{2}}=\frac{\ddot{y}}{(1+\dot{y}^2)^\frac{3}{2}}=0
+\end{equation}
 
 som man kan se skal den dobbeltdifferentierede y give 0, for at det går op. Det passer når $y=k*t+c$. Man kan herfra gå igang med at udregne konstanterne k og c ud fra punkterne givet.
