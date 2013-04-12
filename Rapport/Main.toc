@@ -2,14 +2,15 @@
 \contentsline {section}{\numberline {1}Indledning}{3}{section.1}
 \contentsline {section}{\numberline {2}Grundl\IeC {\ae }ggende teori}{4}{section.2}
 \contentsline {section}{\numberline {3}Eksempler p\IeC {\r a} geod\IeC {\ae }ter}{6}{section.3}
-\contentsline {subsection}{\numberline {3.1}Anvendelse af Euler-Lagrange ligning p\IeC {\r a} en cylinder}{7}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Krum Flade}{11}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Paraboloide}{13}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Kugle}{14}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5} Geod\IeC {\ae }t p\IeC {\r a} ``\IeC {\ae }ggebakke'' }{16}{subsection.3.5}
-\contentsline {subsubsection}{\numberline {3.5.1}Geod\IeC {\ae }ter p\IeC {\r a} flader af typen \(\mathscr {F}(x,~y) = (x,~y,~f(x,~y))\)}{16}{subsubsection.3.5.1}
+\contentsline {subsection}{\numberline {3.1}Geod\IeC {\ae }ter i planet}{6}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Anvendelse af Euler-Lagrange ligning p\IeC {\r a} en cylinder}{7}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Krum Flade}{11}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Paraboloide}{13}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Kugle}{14}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6} Geod\IeC {\ae }t p\IeC {\r a} ``\IeC {\ae }ggebakke'' }{16}{subsection.3.6}
+\contentsline {subsubsection}{\numberline {3.6.1}Geod\IeC {\ae }ter p\IeC {\r a} flader af typen \(\mathscr {F}(x,~y) = (x,~y,~f(x,~y))\)}{16}{subsubsection.3.6.1}
 \contentsline {paragraph}{Geod\IeC {\ae }t p\IeC {\r a} flat plan}{16}{section*.10}
-\contentsline {subsubsection}{\numberline {3.5.2}Geod\IeC {\ae }t for \IeC {\ae }ggebakke }{18}{subsubsection.3.5.2}
+\contentsline {subsubsection}{\numberline {3.6.2}Geod\IeC {\ae }t for \IeC {\ae }ggebakke }{18}{subsubsection.3.6.2}
 \contentsline {paragraph}{Parametrisering af geod\IeC {\ae }t for \IeC {\ae }ggebakke}{19}{section*.11}
 \contentsline {section}{\numberline {4}Polygonkurver}{24}{section.4}
 \contentsline {subsection}{\numberline {4.1}L\IeC {\ae }ngden af en polygonkurve}{24}{subsection.4.1}
