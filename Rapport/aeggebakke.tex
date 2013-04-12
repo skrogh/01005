@@ -8,8 +8,6 @@ en flade givet ved:
 F(x,~y) = (x,~y,~a \cdot \cos(x)+~a \cdot \sin(y))
 \end{equation}
 
-Det vil dog vise sig at dette ikke altid er ligetil.
-
 Variablen \(a\) bestemmer ``dybden'' på æggebakken.
 Grafen for en æggebakke med \(a = 2\) er plottet i figur~\ref{fig:aeg}
 \begin{figure}[h!]
@@ -31,14 +29,14 @@ med geodæter af typen:
 \pmb{\gamma}(t) = (x(t),~y(t),~f(x(t),~y(t)))
 \end{equation}
 
-%Jf. noget david har skrevet, for håbentligt! Ellers får jeg travlt
-har vi følgende Euler-Lagrange ligninger:
-\begin{equation*}
+Jf. \emph{Sætning \ref{ELiR3}, Euler-Lagrange Ligningerne i $\mathbb{R}^3$} har vi følgende Euler-Lagrange ligninger:
+\begin{equation} \label{eq:ELPlanFlade}
 \begin{gathered}
 \frac{\partial L}{\partial x} - \frac{d}{dt}\frac{\partial L}{\partial \diff{x}} = 0\\
 \frac{\partial L}{\partial y} - \frac{d}{dt}\frac{\partial L}{\partial \diff{y}} = 0
 \end{gathered}
-\end{equation*}
+\end{equation}
+da \(\pmb{\gamma}\) nu udelukkende afhænger af $t$, $x(t)$ og $y(t)$
 
 \paragraph{Geodæt på flat plan}
 Lad os se hvad dette gør for geodæter på det simple plan:
@@ -66,7 +64,7 @@ hvilket giver følgende Euler-Lagrange ligninger:
 \frac{\partial L}{\partial x} - \frac{d}{d t} \frac{\partial L}{\partial \diff{x}} =
 \frac{\diff{y}(t) \cdot ( \ddiff{x}(t)\diff{y}(t) - \ddiff{y}(t)\diff{x}(t) )}{\sqrt{\diff{x}(t)^2 + \diff{y}(t)^2}^3} = 0\\
 \frac{\partial L}{\partial y} - \frac{d}{d t} \frac{\partial L}{\partial \diff{y}} =
-\frac{\diff{x}(t) \cdot ( \ddiff{x}(t)\diff{y}(t) - \ddiff{y}(t)\diff{x}(t) )}{\sqrt{\diff{x}(t)^2 + \diff{y}(t)^2}} = 0\\
+\frac{\diff{x}(t) \cdot ( \ddiff{x}(t)\diff{y}(t) - \ddiff{y}(t)\diff{x}(t) )}{\sqrt{\diff{x}(t)^2 + \diff{y}(t)^2}^3} = 0\\
 \end{gathered}
 \end{equation*}
 
@@ -130,10 +128,8 @@ og Lagrange funktionen:
 L(\pmb{\gamma_p}) = \sqrt{ 1 + \diff{m}(t)^2 }
 \end{equation*}
 
-Vi ser at Lagrange funktionalen her er afhænging af \(\diff{m}(t)\) 
-
-Vi ser at Lagrange funktionen her er afhænging af \(\diff{m}(t)\)
-hvilket giver følgende Euler-Lagrange ligning:
+Vi ser at Lagrange funktionen her kun er afhænging af \(\diff{m}(t)\)
+hvilket som følge af \emph{Sætning \ref{ELiR3}, Euler-Lagrange Ligningerne i $\mathbb{R}^3$} giver følgende Euler-Lagrange ligning:
 \begin{equation*}
 \frac{\partial L}{\partial m} - \frac{d}{d t} \frac{\partial L}{\partial \diff{m}} = 
 \frac{\ddiff{m}(t)}{\sqrt{1 + \diff{m}(t)^2}^3} = 0\\
@@ -161,7 +157,7 @@ Dette giver geodæter af typen:
  \end{equation*}
 
 Konklutionen er at det ofte simplifiserer differentialligingerne,
-at parametriserer geodæter af typen (\ref{eq:geodPlanFlade}) til
+at parametriserer geodæter af typen (\ref{eq:geodFlade}) til
 \begin{equation*}
 \pmb{\gamma}(t) = (p(t,~m(t)),q(t,~m(t)),~f(p(t,~m(t)),q(t,~m(t))))
 \end{equation*}
