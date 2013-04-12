@@ -1,4 +1,4 @@
-
+\subsection{Anvendelse af Euler-Lagrange ligning på en cylinder}
 Man kan nu begynde at anvende de ligninger der er blevet udledt i de tidligere afsnit, på en cylinder.
 \\
 Der er givet en cylinders parameterfrenstilling:
@@ -48,7 +48,7 @@ k er et udtryk for hældning og C er bare en konstant.
 Dette betyder at funktionen der forbinder 2 punkter på en cylinder er en ret linje hvilket jo også giver mening, da man folder cylinder ud til et plan.
 \\
 \\
-Vi kan nu opstille to ligninger til undersøgelse af hvilken effekt det vil have at ændre de forskellige parametre.
+Der kan nu opstilles to ligninger til undersøgelse af hvilken effekt det vil have at ændre de forskellige parametre.
 \\
 Første ligning
 \begin{equation}
@@ -77,10 +77,12 @@ $Z_b$ sætte Za til 3 og Zb til 5 og vi sætter $\theta_a$ til $\frac{1}{2} \pi$
 Der indsættes værdier i første ligning
 \begin{equation}
 \frac{3-5}{\frac{1}{2}\pi-\pi}\frac{1}{2} \pi + C = 3
+\label{eq:ligning1}
 \end{equation}
 Der indsættes værdier i anden ligning
 \begin{equation}
 \frac{3-5}{\frac{1}{2}\pi-\pi}\pi + C = 5
+\label{eq:ligning2}
 \end{equation}
 Vi finder C
 \begin{equation}
@@ -98,16 +100,17 @@ Her ses den geodætiske kurve plottet på en cylinder
 
 \end{lstlisting}
 
-\begin{figure}\label{eq:GeoPlot1}
+\begin{figure}
 \center
-\includegraphics[scale=0.4]{pictures/Opg8_Fig1.eps}  
+\includegraphics[scale=0.4]{pictures/Opg8_figur1.png}  
 \caption{Plot af geodæt på cylinder hvor $Z_a\neq Z_b$ er gældende }
+\label{eq:GeoPlot1}
 \end{figure}
 Som det er beregnet og kan ses på figur  (\ref{eq:GeoPlot1}) , ligner det ganske rigtig den korteste vej over cylinderfladen mellem de 2 punkter og derved en geodætisk kurve.
 \\
 \\
 \\
-Vi kan nu se hvad det betyde at $Z_a=Z_b$, $Z_a$ til 5 og vi sætter $\theta_a$ til $\frac{1}{2}\pi$ $\theta_b$ til $\pi$ og hertil foretager de samme beregniner som eksemplet tidligere (\ref{eq:(12)}.
+Vi kan også se på hvad det betyde at $Z_a=Z_b$, $Z_a$ til 5 og vi sætter $\theta_a$ til $\frac{1}{2}\pi$ $\theta_b$ til $\pi$ og hertil foretages der de samme beregniner som eksemplet tidligere (\ref{eq:ligning1} og (\ref{eq:ligning2}.
 \begin{lstlisting}[caption={Plot commands brugt for nedenstående figur}(\ref{eq:GeoPlot2}) ]
 > with(plots);
 > Curve1 := spacecurve([cos(t), sin(t), 4*t/Pi+1], t = theta[a] .. theta[b], color = red);
@@ -115,25 +118,27 @@ Vi kan nu se hvad det betyde at $Z_a=Z_b$, $Z_a$ til 5 og vi sætter $\theta_a$ 
 > display(cylinder([0, 0, 2], 1, 4), Curve1, orientation = [45, 70], scaling = constrained);
 
 \end{lstlisting}
-\begin{figure}[ht]\label{eq:GeoPlot2}
+\begin{figure}[ht]
 \center
-\includegraphics[scale=0.4]{pictures/Opg8_Fig2.eps}
+\includegraphics[scale=0.4]{pictures/Opg8_Figur2.png}
 \caption{Plot af geodæt på en cylinder hvor $Z_a=Z_b$ er gældende}
+\label{eq:GeoPlot2}
 \end{figure}
 Som det ses på figur (\ref{eq:GeoPlot2}) bliver det en vandret strej mellem de 2 punkter, som er resultatet af at $\Delta Z$ bliver 0.
 \\
 \\
-Vi skal nu se hvad der sker hvis vi ændrer $\theta$. Hertil sætter vi $\theta_a$ til $\frac{4}{3} \pi$ og $\theta_b$ til $\frac{4}{3}$ og vi sætter $Z_a$ til 3 og $Z_b$ til 5. Vi indsætter som gjordt i ligning (\ref{eq:(12)}
+Vi skal nu se hvad der sker hvis vi ændrer $\theta$. Hertil sætter vi $\theta_a$ til $\frac{4}{3} \pi$ og $\theta_b$ til $\frac{4}{3}$ og vi sætter $Z_a$ til 3 og $Z_b$ til 5. Vi indsætter som gjordt i ligning (\ref{eq:ligning1} og (\ref{eq:ligning2}.
 \begin{lstlisting} [caption={Plot commands brugt for nedenstående figur}(\ref{eq:GeoPlot3})]
 > with(plots);
 > Curve1 := spacecurve([cos(t), sin(t), 3*t/(2*Pi)+2], t = 0 .. (4/3)*Pi, color = red);
 > with(plottools);
 > display(Curve1, orientation = [45, 70], scaling = constrained);
 \end{lstlisting}
-\begin{figure}[ht] \label{eq:GeoPlot3}
+\begin{figure}[ht] 
 \center
-\includegraphics[scale=0.4]{pictures/Opg8_Fig3.eps}
+\includegraphics[scale=0.4]{pictures/Opg8_Figur3.png}
 \caption{Plot af geodæt særtilfælde og hvor cylinder ikke er vidst}
+\label{eq:GeoPlot3}
 \end{figure}
 Af forståelsesmæssige grunde er cylinderen blivet fjernet og er samtidig fremhæve pointen. (\ref{eq:GeoPlot3})
 \\
@@ -143,7 +148,7 @@ I dette tilfælde er der beregnet hvad der eftersigende skulle være den kortest
 Et interessant tilfælde forekommer når 2 punkter befinder sig lige over hinanden, dette vil nemlig resultere i at hældningen mellem de 2 punkter bliver uendelig.
 \\
 \\
-Vi kan nu se hvad det betyder at $\theta_a=\theta_b$. Vi sætter $\theta_a-b$ til $\pi$, $Z_a$ til 3 og $Z_b$ til 3 og $Z_b$ til 5 og hertil foretager de samme beregniner som eksemplet tidligere.
+Vi kan nu se hvad det betyder at $\theta_a=\theta_b$. Vi sætter $\theta_a-b$ til $\pi$, $Z_a$ til 3 og $Z_b$ til 3 og $Z_b$ til 5 og hertil foretager de samme beregniner som i(\ref{eq:ligning1} og (\ref{eq:ligning2}.
 \\
 Udtryk for hældningen
 \begin{equation}
@@ -156,10 +161,11 @@ Dette ligning vil resultere at hældning bliver uendelig
 > with(plottools);
 > display(cylinder([0, 0, C], 1, 5), Curve1, orientation = [45, 70], scaling = constrained);
 \end{lstlisting}
-\begin{figure}\label{eq:GeoPlot4}
+\begin{figure}
 \center
-\includegraphics[scale=0.4]{pictures/Opg8_Fig4.eps}
-\caption{lol hurr durr+}
+\includegraphics[scale=0.4]{pictures/Opg8_Figur4.png}
+\caption{Plot af geogæt mellem 2 punkter beliggende over hinanden}
+\label{eq:GeoPlot4}
 \end{figure}
-Som det fremgår af figur (\ref{eq:GeoPlot4} forbindes de 2 punkter nu af en ret linje.
+Som det fremgår af figur (\ref{eq:GeoPlot4} ) forbindes de 2 punkter nu af en ret linje.
 
