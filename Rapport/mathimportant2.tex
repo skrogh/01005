@@ -1,0 +1,61 @@
+
+\begin{thm} {\bf Geodæter på en Kugle}\\
+\noindent For nogle meget symmetriske (eller konstruerede) flader, såsom kuglen, eksisterer en simpel analytisk løsning til Euler-Lagrange ligningerne for familien af geodætiske kurver på fladen. For en kugle i $\mathbb{R}^3$ med radius $\rho$ består familien af alle de kurver som dannes af intersektionen af et plan igennem origo $ax+by+cz=0$ med kuglefladen $x^2 + y^2 +z^2 =\rho^2$. 
+\end{thm}
+
+\begin{proof}
+Lad ${\boldsymbol \gamma} =(t, \theta(t)) $ være en enhedsparametriseret kurve ${\boldsymbol \gamma} : [0,1] \rightarrow \mathbb{R}^2$ og lad funktionen $\mathbf{f}(\phi,\theta) = (\rho\cos(\theta)\sin(\phi), \rho\sin(\theta)\sin(\phi), \rho\cos(\phi))$ være en parametrisering af kuglen således at $\mathbf{f} \circ {\boldsymbol \gamma}(0)=\mathbf{a}$ og $\mathbf{f} \circ {\boldsymbol \gamma}(1)=\mathbf{b}$ hvor $\mathbf{a}$ og $\mathbf{b}$ er to ikke-sammenfaldende punkter på kuglen. Den resulterende integrand er $|| \frac{d}{dt}(\mathbf{f} \circ {\boldsymbol \gamma})(t) ||$ og afstanden $L$ er
+\begin{align*}
+L({\boldsymbol \gamma}) &= \int_0^1 ||\frac{d}{dt}(\mathbf{f} \circ {\boldsymbol \gamma})(t) || \, dt \\
+&= \int_0^1 \rho\sqrt{\big( \cos(\theta)\cos(t)-\sin(\theta)\sin(t) \frac{d\theta}{dt} \big)^2 + \big(\sin(\theta)\cos(t)+\cos(\theta)\sin(t) \frac{d\theta}{dt} \big)^2 + \sin^2(t)} \, dt\\
+&= \int_0^1 \rho\sqrt{1+\sin^2(t) \big(\frac{d\theta}{dt} \big)^2} \, dt
+\end{align*}
+Lad $\mathcal{L}(t,\theta(t),\frac{d\theta}{dt}(t))= \rho\sqrt{1+\sin^2(t) (\frac{d\theta}{dt})^2}$. Den tilhørende Euler-Lagrange ligning er
+\begin{align*}
+\frac{\partial \mathcal{L}}{\partial \theta} - \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{\theta}} &= 0-\rho \frac{d}{dt}\Big( \frac{\sin^2(t)\frac{d\theta}{dt}}{\sqrt{1+\sin^2(t) \big(\frac{d\theta}{dt} \big)^2}} \Big) = 0 \\
+&\Rightarrow \quad \frac{\sin^2(t)\frac{d\theta}{dt}}{\sqrt{1+\sin^2(t) \big(\frac{d\theta}{dt} \big)^2}} = k \\
+&\Rightarrow \quad
+\sin^4(t)\big(\frac{d\theta}{dt} \big)^2 = k^2 \Big( 1+\sin^2(t) \big(\frac{d\theta}{dt} \big)^2 \Big) \\
+&\Rightarrow \quad
+\big(\frac{d\theta}{dt} \big)^2 = \frac{k^2}{\sin^2(t)(\sin^2(t)-k^2)}
+\end{align*}
+Hvor $|k|<1$ er en vilkårlig konstant. Løsningen kan dermed udtrykkes som integralet
+\begin{align*}
+\theta(t) = \epsilon_0 \int_{t_0}^t \frac{|k|}{|\sin(s)|\sqrt{\sin^2(s)-k^2}} \, ds
+\end{align*}
+Størrelsen $\epsilon_0 = \textnormal{sgn}(\frac{d\theta}{dt}) $ er en fortegnsfaktor, et artifakt af $(\frac{d\theta}{dt})^2$ (kurvens orientering).
+
+
+\newpage
+\noindent Integralet kan udføres ved først at substituere $s=\arctan(u)$ og derefter $u=\frac{|k|}{\sqrt{1-k^2}}\sec(v)$. Vælg $t_0$ og $t$ så $\frac{|k|\cot(t_0)}{\sqrt{1-k^2}}<1$ og $\frac{|k|\cot(t)}{\sqrt{1-k^2}}<1$ (en omparametrisering tillader et vilkårligt valg). Forsigtig fremgang med fortegn viser
+\begin{align*}
+\theta(t) &= \epsilon_0 \int_{t_0}^t \frac{|k|}{|\sin(s)|\sqrt{\sin^2(s)-k^2}} \, ds \\
+&=
+\epsilon_0 \int^{\tan(t)}_{\tan(t_0)} \frac{|k|}{|\frac{u}{\sqrt{1+u^2}}|\sqrt{k^2 \frac{u^2}{1+u^2}-k^2}} \frac{1}{1+u^2}\, du \\
+&=
+\epsilon_0 \int^{\tan(t)}_{\tan(t_0)} \frac{\frac{|k|}{\sqrt{1-k^2}}}{|u|\sqrt{u^2 -\frac{k^2}{1-k^2}}}\, du \\
+&=
+\epsilon_0 \int^{\arccos(\frac{|k|\cot(t)}{\sqrt{1-k^2}})}_{\arccos(\frac{|k|\cot(t_0)}{\sqrt{1-k^2}})} \frac{1}{|\frac{|k|}{\sqrt{1-k^2}}\sec(v)|\sqrt{\sec^2(u) - 1}}\, \frac{|k|}{\sqrt{1-k^2}}\sec(v)\tan(v)\, dv \\
+&=
+\epsilon_0 \int^{\arccos(\frac{|k|\cot(t)}{\sqrt{1-k^2}})}_{\arccos(\frac{|k|\cot(t_0)}{\sqrt{1-k^2}})} \frac{\sec(v)\tan(v)}{|\sec(v)||\tan(v)|} \, dv \\
+&=
+\epsilon_0 \int^{\arccos(\frac{|k|\cot(t)}{\sqrt{1-k^2}})}_{\arccos(\frac{|k|\cot(t_0)}{\sqrt{1-k^2}})} \frac{\sin(v)}{|\sin(v)|} \, dv \\
+&=
+\epsilon_0 \int^{\arccos(\frac{|k|\cot(t)}{\sqrt{1-k^2}})}_{\arccos(\frac{|k|\cot(t_0)}{\sqrt{1-k^2}})} \, dv
+\end{align*}
+Bemærk at $\frac{\sin(u)}{|\sin(u)|}=1$ idet $[\arccos(\frac{|k|\cot(t_0)}{\sqrt{1-k^2}}),\arccos(\frac{|k|\cot(t)}{\sqrt{1-k^2}})] \subset (0,\frac{1}{2}\pi)$. Integralet er således
+\begin{align*}
+&=
+\epsilon_0 \Big(\arccos\big(\frac{|k|\cot(t)}{\sqrt{1-k^2}}\big) - \arccos\big(\frac{|k|\cot(t_0)}{\sqrt{1-k^2}}\big)\Big)
+\end{align*}
+Lad $c=- \arccos\big(\frac{|k|\cot(t_0)}{\sqrt{1-k^2}}\big)$, resultatet kan da omskrives  
+\begin{align*}
+\cos (\epsilon_0\theta - c)\sin(t) = \cos (c)\cos(\theta)\sin(t)+\epsilon_0 \sin(c)\sin(\theta) \sin(t) =
+\frac{|k|\cos(t)}{\sqrt{1-k^2}} 
+\end{align*}
+Identificeres første $x=\rho\cos(\theta)\sin(t)$, anden $y=\rho\sin(\theta)\sin(t)$ og tredje $z=\rho\cos(t)$ koordinat, så er det endelige udtryk netop 
+\begin{align*}
+\cos (c)x+\epsilon_0\sin(c)y - \frac{|k|z}{\sqrt{1-k^2}}=0 
+\end{align*}
+Hvilket er af formen $ax+by+cz=0$ - et plan igennem origo.
+\end{proof}
