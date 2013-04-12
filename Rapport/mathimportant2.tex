@@ -4,15 +4,15 @@
 \end{thm}
 
 \begin{proof}
-Lad ${\boldsymbol \gamma} =(t, \theta(t)) $ være en enhedsparametriseret kurve ${\boldsymbol \gamma} : [0,1] \rightarrow \mathbb{R}^2$ og lad funktionen $\mathbf{f}(\phi,\theta) = (\rho\cos(\theta)\sin(\phi), \rho\sin(\theta)\sin(\phi), \rho\cos(\phi))$ være en parametrisering af kuglen således at $\mathbf{f} \circ {\boldsymbol \gamma}(0)=\mathbf{a}$ og $\mathbf{f} \circ {\boldsymbol \gamma}(1)=\mathbf{b}$ hvor $\mathbf{a}$ og $\mathbf{b}$ er to ikke-sammenfaldende punkter på kuglen. Den resulterende integrand er $|| \frac{d}{dt}(\mathbf{f} \circ {\boldsymbol \gamma})(t) ||$ og afstanden $L$ er
+Lad ${\boldsymbol \gamma} =(t, \theta(t)) $ være en enhedsparametriseret kurve ${\boldsymbol \gamma} : [0,1] \rightarrow \mathbb{R}^2$ og lad funktionen $\mathbf{f}(\phi,\theta) = (\rho\cos(\theta)\sin(\phi), \rho\sin(\theta)\sin(\phi), \rho\cos(\phi))$ være en parametrisering af kuglen således at $\mathbf{f} \circ {\boldsymbol \gamma}(0)=\mathbf{a}$ og $\mathbf{f} \circ {\boldsymbol \gamma}(1)=\mathbf{b}$ hvor $\mathbf{a}$ og $\mathbf{b}$ er to ikke-sammenfaldende punkter på kuglen. Den resulterende integrand er $|| \frac{d}{dt}(\mathbf{f} \circ {\boldsymbol \gamma})(t) ||$ og afstanden $\mathscr{L}$ er
 \begin{align*}
-L({\boldsymbol \gamma}) &= \int_0^1 ||\frac{d}{dt}(\mathbf{f} \circ {\boldsymbol \gamma})(t) || \, dt \\
+\mathscr{L}({\boldsymbol \gamma}) &= \int_0^1 ||\frac{d}{dt}(\mathbf{f} \circ {\boldsymbol \gamma})(t) || \, dt \\
 &= \int_0^1 \rho\sqrt{\big( \cos(\theta)\cos(t)-\sin(\theta)\sin(t) \frac{d\theta}{dt} \big)^2 + \big(\sin(\theta)\cos(t)+\cos(\theta)\sin(t) \frac{d\theta}{dt} \big)^2 + \sin^2(t)} \, dt\\
 &= \int_0^1 \rho\sqrt{1+\sin^2(t) \big(\frac{d\theta}{dt} \big)^2} \, dt
 \end{align*}
-Lad $\mathcal{L}(t,\theta(t),\frac{d\theta}{dt}(t))= \rho\sqrt{1+\sin^2(t) (\frac{d\theta}{dt})^2}$. Den tilhørende Euler-Lagrange ligning er
+Lad $ L(t,\theta(t),\frac{d\theta}{dt}(t))= \rho\sqrt{1+\sin^2(t) (\frac{d\theta}{dt})^2}$. Den tilhørende Euler-Lagrange ligning er
 \begin{align*}
-\frac{\partial \mathcal{L}}{\partial \theta} - \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{\theta}} &= 0-\rho \frac{d}{dt}\Big( \frac{\sin^2(t)\frac{d\theta}{dt}}{\sqrt{1+\sin^2(t) \big(\frac{d\theta}{dt} \big)^2}} \Big) = 0 \\
+\frac{\partial  L}{\partial \theta} - \frac{d}{dt} \frac{\partial  L}{\partial \dot{\theta}} &= 0-\rho \frac{d}{dt}\Big( \frac{\sin^2(t)\frac{d\theta}{dt}}{\sqrt{1+\sin^2(t) \big(\frac{d\theta}{dt} \big)^2}} \Big) = 0 \\
 &\Rightarrow \quad \frac{\sin^2(t)\frac{d\theta}{dt}}{\sqrt{1+\sin^2(t) \big(\frac{d\theta}{dt} \big)^2}} = k \\
 &\Rightarrow \quad
 \sin^4(t)\big(\frac{d\theta}{dt} \big)^2 = k^2 \Big( 1+\sin^2(t) \big(\frac{d\theta}{dt} \big)^2 \Big) \\
