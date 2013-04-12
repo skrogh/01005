@@ -100,7 +100,7 @@ Her ses den geodætiske kurve plottet på en cylinder
 
 \end{lstlisting}
 
-\begin{figure}
+\begin{figure}[h]
 \center
 \includegraphics[scale=0.4]{pictures/Opg8_figur1.png}  
 \caption{Plot af geodæt på cylinder hvor $Z_a\neq Z_b$ er gældende }
@@ -118,7 +118,7 @@ Vi kan også se på hvad det betyde at $Z_a=Z_b$, $Z_a$ til 5 og vi sætter $\th
 > display(cylinder([0, 0, 2], 1, 4), Curve1, orientation = [45, 70], scaling = constrained);
 
 \end{lstlisting}
-\begin{figure}[ht]
+\begin{figure}[h]
 \center
 \includegraphics[scale=0.4]{pictures/Opg8_Figur2.png}
 \caption{Plot af geodæt på en cylinder hvor $Z_a=Z_b$ er gældende}
@@ -134,7 +134,7 @@ Vi skal nu se hvad der sker hvis vi ændrer $\theta$. Hertil sætter vi $\theta_
 > with(plottools);
 > display(Curve1, orientation = [45, 70], scaling = constrained);
 \end{lstlisting}
-\begin{figure}[ht] 
+\begin{figure}[h] 
 \center
 \includegraphics[scale=0.4]{pictures/Opg8_Figur3.png}
 \caption{Plot af geodæt særtilfælde og hvor cylinder ikke er vidst}
@@ -161,7 +161,7 @@ Dette ligning vil resultere at hældning bliver uendelig
 > with(plottools);
 > display(cylinder([0, 0, C], 1, 5), Curve1, orientation = [45, 70], scaling = constrained);
 \end{lstlisting}
-\begin{figure}
+\begin{figure}[h]
 \center
 \includegraphics[scale=0.4]{pictures/Opg8_Figur4.png}
 \caption{Plot af geogæt mellem 2 punkter beliggende over hinanden}
