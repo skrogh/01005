@@ -230,16 +230,83 @@ p_1=p_a, \cdot\cdot\cdot, p_n=p_b \in \mathbb{R}^3
 Afstanden mellem to på hinanden følgene hjørnepunkter er
 \begin{equation}
 \delta_i = \sqrt{\left(x_{i+1}-x_i\right)^2+\left(y_{i+1}-y_1\right)^2+\left(f\left(x_{i+1},y_{i+1}\right) - f\left(x_i,y_i\right)\right)^2}, \quad i=1,...,i=n-1
+\label{deltai}
 \end{equation}
 Den polygonkurve der følger den korteste vej mellem dens endepunkter opfylder at
 \begin{equation}
 \mathscr{L}(\pmb{\gamma}_p)=\sum\limits_{i=1}^{n-1}\delta_i=min\left(\sum\limits_{i=1}^{n-1}\delta_i\right)
-\label{polygeo}
+\label{polymini}
 \end{equation}
-Polygonkurvens længde kan ændres ved at ændre på hjørnepunkternes placering, dvs. der kan konstrueres en polygonkurve mellem to punkter på en flade, der approksimerer geodæten mellem de to punkter, ved at flytte på polygonkurvens hjørnepunkter. Det er dog nødvendigt at placere en restriktion på ligning (\ref{polygeo}) for at undgå at den ene halvdel af polygonkurvens hjørnepunkter placeres i \(p_a\) og den anden halvdel i \(p_b\), da dette giver den mindste kurvelængde, eftersom kurvelængden således bliver længden af den rette linje mellem \(p_a\) og \(p_b\).
+Polygonkurvens længde kan ændres ved at ændre på hjørnepunkternes placering, dvs. der kan konstrueres en polygonkurve mellem to punkter på en flade, der approksimerer geodæten mellem de to punkter, ved at flytte på polygonkurvens hjørnepunkter. Det er dog nødvendigt at placere en restriktion på ligning (\ref{polygeo}) for at undgå at den ene halvdel af polygonkurvens hjørnepunkter placeres i \(p_a\) og den anden halvdel i \(p_b\), da dette giver den mindste kurvelængde, eftersom kurvelængden således bliver længden af den rette linje mellem \(p_a\) og \(p_b\). \\
+
+
 
 Påfører vi restriktionen
 \begin{equation}
 \delta_i = \delta_{i+1}, \quad i=1,...,i=n-2
 \end{equation}
 Tvinges minimeringsprocesson derimod til at udføres for ækvidistante hjørnepunkter.
+
+\subsection{Eksempel på approksimering af en geodæt}
+Vi vil nu forsøge at finde den korteste vej mellem 2 punkter på fladen \(\pmb{F}(x,y)=(x,y,tanh(20(cos(x)+sin(y)))\), der fremover vil blive kaldt chokoladeæsken.
+\begin{figure}
+\center
+\includegraphics[scale=0.4]{pictures/chokobox.png}
+\caption{Grafen for chokoladeæsken, \(\pmb{F}(x,y)\)}
+\end{figure}
+
+
+Der placeres to punkter på fladen \(p_a=(-2\pi, -\frac{4}{3}\pi,\pmb{F}(-2\pi, -\frac{4}{3}\pi))\), \(p_b=(2\pi, \frac{4}{3}\pi,\pmb{F}(2\pi, \frac{4}{3}\pi))\) og en polygonkurve \(\pmb{\gamma}_p\) med 80 hjørnepunkter konstrueres. (\ref{polymini}) løses derefter ved brug af Maple kommandoen NLPSolve.
+
+NLPSolve løser ulineære systemer og tager følgene parametre:
+\begin{itemize}
+\item \(F\); funktionen der skal minimeres.
+\item Begrænsninger; en liste af begrænsninger for minimeringen.
+\item Initialpoint; en liste med startbetingelser for de punkter der skal minimeres.
+\item Ekstra parametre; Maple options, såsom algoritmen der skal benyttes og hvor mange gange NLPSolve skal forsøge at gennemføre minimeringen.
+\end{itemize}
+
+Mapleprogrammet ses nedenfor.
+
+Først initialiseres fladen, polygonkurven og minimeringsbetingelserne fra (\ref{polymini}).
+\begin{lstlisting}[caption=Initialisering]
+>f:= (x,y) -> tanh(20*(sin(y)+cos(x))):
+>gammax := <seq(3*Pi*n/60,n=-40..40)>:
+>gammay := <seq(2*Pi*n/60,n=-40..40)>:
+>n := nops(convert(gammax,list)):
+>deltai := (x,y,i) -> sqrt((x[i+1]-x[i])^2 + (y[i+1]-y[i])^2 +
+(f(x[i+1],y[i+1]) - f(x[i],y[i]))^2):
+
+>delta:=(x,y)->add(deltai(x,y,i),i=1..n-1):
+>bc := (x,y,i) -> deltai(x,y,i)-deltai(x,y,i+1):
+\end{lstlisting}
+Her er gammax vektoren en liste af polygonkurvens hjørnepunkters x-koordinat og gammay vektoren en liste med de korresponderende y-koordinater. deltai er inkodningen af (\ref{deltai}), delta er en hjælpefunktion der summer længderne mellem hjørnepunkterne og bc er inkodningen af (\ref{polymini}).
+
+Herefter udføres optimiseringen ved brug af NLPSolve og de resulterende hjørnepunkter fordeles i koordinatvektorer.
+\begin{lstlisting}[caption={Brug af NLPSolve til løsning af (\ref{polymini})}]
+>OP:=NLPSolve(delta(x,y),{seq(bc(x,y,i)=0,i=1..n-2),x[1]=
+gammax[1],x[n]=gammax[n],y[1]=gammay[1],
+y[n]=gammay[n]},initialpoint = {seq(x[i]=gammax[i],i=1..n),
+seq(y[i]=gammay[i],i=1..n)},iterationlimit=10000):
+Warning, limiting number of major iterations has been reached
+>Xop := <seq(subs(OP[2],x[i]),i=1..n)>:
+>Yop := <seq(subs(OP[2],y[i]),i=1..n)>:
+\end{lstlisting}
+Det ses her at Maple ikke er sikker på at den har minimeret problemet korrekt da programmet erklærer at den har gennemført 10000 gennemførsler uden at terminere. Da kommandoen tager lang tid at eksekvere vil vi dog benytte den her fundne løsning. Et plot af den minimerede polygonkurve, den originale polygonkurve, samt chokoladeæsken ses i figur \ref{polyoptimized}.
+\begin{figure}
+\center
+\includegraphics[scale=0.4]{pictures/chokobox_optimized2.png}
+\caption{Her ses den minimerede polygonkurve som den sorte rumkurve og den originale polygonkurve som den blå rumkurve.}
+\label{polyoptimized}
+\end{figure}
+
+Vi kan ikke vise at den minimerede polygonkurve OP er en approksimation af den faktiske geodæt for chokoladeæsken, men vi kan vi at dens længde er mindre end den originale polygonkurve.
+Dette gøres ved at genbruge den allerede definerede funktion delta der netop kunne beregne længden af en polygonkurve.
+
+\begin{lstlisting}[caption=Længden af den minimerede og ikke-minimerede polygonkurve]
+>evalf(delta(gammax,gammay));
+                          21.33176220
+>evalf(delta(Xop,Yop));
+                   		  19.2371686766222
+\end{lstlisting}
+Her er den nederste evaluering udført med punkterne fra den minimerede polygonkurve og det ses at den, som forventet, er kortere end den originale kurve.
