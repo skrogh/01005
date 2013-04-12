@@ -1,19 +1,20 @@
 \select@language {danish}
 \contentsline {section}{\numberline {1}Indledning}{3}{section.1}
-\contentsline {section}{\numberline {4}Geod\IeC {\ae }t i planet}{13}{section.4}
-\contentsline {subsection}{\numberline {2.1}Anvendelse af Euler-Lagrange ligning p\IeC {\r a} en cylinder}{7}{subsection.2.1}
-\contentsline {section}{\numberline {5}Krum Flade}{14}{section.5}
-\contentsline {section}{\numberline {4}Geod\IeC {\ae }t i planet}{13}{section.4}
-\contentsline {section}{\numberline {5}Krum Flade}{14}{section.5}
-\contentsline {section}{\numberline {6}Paraboloide}{16}{section.6}
-\contentsline {subsection}{\numberline {6.1} Geod\IeC {\ae }t p\IeC {\r a} ``\IeC {\ae }ggebakke'' }{19}{subsection.6.1}
-\contentsline {subsubsection}{\numberline {6.1.1}Geod\IeC {\ae }ter p\IeC {\r a} flader af typen \(\mathscr {F}(x,~y) = (x,~y,~f(x,~y))\)}{19}{subsubsection.6.1.1}
-\contentsline {paragraph}{Geod\IeC {\ae }t p\IeC {\r a} flat plan}{19}{section*.11}
-\contentsline {subsubsection}{\numberline {6.1.2}Geod\IeC {\ae }t for \IeC {\ae }ggebakke }{21}{subsubsection.6.1.2}
-\contentsline {paragraph}{Parametrisering af geod\IeC {\ae }t for \IeC {\ae }ggebakke}{22}{section*.12}
-\contentsline {section}{\numberline {7}Polygonkurver}{27}{section.7}
-\contentsline {subsection}{\numberline {7.1}L\IeC {\ae }ngden af en polygonkurve}{27}{subsection.7.1}
-\contentsline {paragraph}{Middelv\IeC {\ae }rdis\IeC {\ae }tningen:}{27}{section*.15}
-\contentsline {subsection}{\numberline {7.2}Eksempler p\IeC {\r a} polygonkurver}{28}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Polygonkurver som geod\IeC {\ae }ter}{33}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Eksempel p\IeC {\r a} approksimering af en geod\IeC {\ae }t}{34}{subsection.7.4}
+\contentsline {section}{\numberline {2}Grundl\IeC {\ae }ggende teori}{4}{section.2}
+\contentsline {section}{\numberline {3}Eksempler p\IeC {\r a} geod\IeC {\ae }ter}{6}{section.3}
+\contentsline {subsection}{\numberline {3.1}Anvendelse af Euler-Lagrange ligning p\IeC {\r a} en cylinder}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Krum Flade}{11}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Paraboloide}{13}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Kugle}{14}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5} Geod\IeC {\ae }t p\IeC {\r a} ``\IeC {\ae }ggebakke'' }{16}{subsection.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}Geod\IeC {\ae }ter p\IeC {\r a} flader af typen \(\mathscr {F}(x,~y) = (x,~y,~f(x,~y))\)}{16}{subsubsection.3.5.1}
+\contentsline {paragraph}{Geod\IeC {\ae }t p\IeC {\r a} flat plan}{16}{section*.10}
+\contentsline {subsubsection}{\numberline {3.5.2}Geod\IeC {\ae }t for \IeC {\ae }ggebakke }{18}{subsubsection.3.5.2}
+\contentsline {paragraph}{Parametrisering af geod\IeC {\ae }t for \IeC {\ae }ggebakke}{19}{section*.11}
+\contentsline {section}{\numberline {4}Polygonkurver}{24}{section.4}
+\contentsline {subsection}{\numberline {4.1}L\IeC {\ae }ngden af en polygonkurve}{24}{subsection.4.1}
+\contentsline {paragraph}{Middelv\IeC {\ae }rdis\IeC {\ae }tningen:}{24}{section*.14}
+\contentsline {subsection}{\numberline {4.2}Eksempler p\IeC {\r a} polygonkurver}{25}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Polygonkurver som geod\IeC {\ae }ter}{30}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Eksempel p\IeC {\r a} approksimering af en geod\IeC {\ae }t}{31}{subsection.4.4}
+\contentsline {section}{\numberline {5}Konklusion}{34}{section.5}
