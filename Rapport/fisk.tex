@@ -1,13 +1,8 @@
 \section{Geodæt i planet}
-Man kan nu ved hjælp af den udledte ligning finde geodæter på alle flader. Vi vil starte med en geodæt i planen. Euler-Lagrange ligningen ser således ud:
-$\frac{d}{dt} \frac{\partial L}{\partial \dot{y}}(\dot{y})=0$
-
-en parameterfremstilling for en funktion i planen er (t , y(t)). Det sættes ind i Lagrange funktionen. Herved får vi:
-
-$\sqrt{(\frac{d}{dt}t)^2+\frac{d}{dt}y(t))^2}=\sqrt{1+\dot{y}^2}$
-
-Det sættes ind i Euler-Lagrange
-
-$\frac{d}{dt} \frac{\partial L}{\partial \dot{y}}(\sqrt{1+\dot{y}^2})=\frac{d}{dt} \frac{\dot{y}}{\sqrt{1+\dot{y}^2}} = \frac{\ddot{y}}{\sqrt{1+\dot{y}^2}}-\frac{\dot{y}^2\ddot{y}}{(1+\dot{y}^2)^\frac{3}{2}}=\frac{\ddot{y}}{(1+\dot{y}^2)^\frac{3}{2}}=0$
-
-som man kan se skal den dobbeltdifferentierede y give 0, for at det går op. Det passer når $y=k*t+c$. Man kan herfra gå igang med at udregne konstanterne k og c ud fra punkterne givet.
+Man kan nu ved hjælp af den udledte ligning finde geodæter på alle flader. Vi vil starte med en geodæt i planen. En parameterfremstilling for en funktion i planen er (t , y(t)). Det sættes ind i Lagrange funktionen. Herved får vi: \\
+$$L=\sqrt{(\frac{d}{dt}t)^2+\frac{d}{dt}y(t))^2}=\sqrt{1+\dot{y}^2}$$ \\
+Det sættes ind i Euler-Lagrange-ligningen: \\
+$$\frac{d}{dt} \frac{\partial}{\partial \dot{y}}(\sqrt{1+\dot{y}^2})=\frac{d}{dt} \frac{\dot{y}}{\sqrt{1+\dot{y}^2}} = \frac{\ddot{y}}{\sqrt{1+\dot{y}^2}}-\frac{\dot{y}^2\ddot{y}}{(1+\dot{y}^2)^\frac{3}{2}}=\frac{\ddot{y}}{(1+\dot{y}^2)^\frac{3}{2}}=0$$ \\
+som man kan se skal den dobbeltdifferentierede y give 0, for at det går op. Det passer når $y=k*t+c$. Man kan herfra gå igang med at udregne konstanterne k og c ud fra punkterne givet$(t_{1},y_{1}),(t_{2},y_{2})$: \\
+$$k=\frac{y_{1}-y_{2}}{t_{1}-t_{2}}$$
+$$c=y_{1}-kt_{1}$$
